@@ -1,0 +1,42 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    height: 45px;
+    /* margin: 0px; */
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.site-logo img {
+    height: 40px;
+}
+
+#quick-menu-toggle {
+    display: none;
+}
+
+#quick-menu-list {
+    display: flex;
+}
+
+.quick-menu ul {
+    list-style: none;
+}
+
+.quick-menu  ul li {
+    float: left;
+    margin-right: 10px;
+}
+
+.quick-menu #site-info-list {
+    display: none;
+}
+
