@@ -1,6 +1,7 @@
 /* styles.css */
 
 body {
+    display: block;
     font-family: Arial, sans-serif;
     font-size: 13px;
     font-stretch: 100%;
@@ -27,7 +28,7 @@ header {
     box-sizing: border-box;
     display: block;
     line-height: 24px;
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 100;
@@ -53,9 +54,9 @@ header {
 .site-logo img {
     height: 40px;
 }
-
+/* 
 .search-bar {
-}
+} */
 
 
 
@@ -172,8 +173,35 @@ header {
     margin-left: 8px;
 }
 
-/* ~헤더 스타일 지정 */
+/* ~~헤더 스타일 지정 */
 
+/* 메인 스타일~~ */
+
+main {
+    align-items: stretch;
+    box-sizing: border-box;
+    column-gap: 64px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: calc(100vh - 52px);
+    line-height: 24px;
+    padding: 8px 16px;
+    margin-top: 52px;
+    position: relative;
+    z-index: 0;
+}
+
+.left {
+    width: 176px; /* 화면 너비에 따라 너비 변화해야 함. 최소가 176*/
+    position: fixed;
+}
+
+.center {
+    margin-left: 200px;
+}
+
+
+/* ~~메인 스타일 */
 
 
 
