@@ -2,41 +2,201 @@
 
 body {
     font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-stretch: 100%;
+    font-weight: 400;
+    line-height: 14px;
+    tab-size: 4;
+    text-size-adjust: 100%;
+    text-wrap: nowrap;
+    overflow: visible;
+    touch-action: auto;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: rgb(245, 245, 247);
+    cursor: default;
 }
 
+/* 헤더 스타일 지정~ */
+
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: rgba(255, 255, 255, 0.72);
+    border-image-width: 1px;
+    box-shadow: rgb(234, 234, 236) 0px 1px 0px 0px;
     box-sizing: border-box;
-    height: 45px;
-    /* margin: 0px; */
-    padding: 10px 20px;
-    border-bottom: 1px solid #ccc;
+    display: block;
+    line-height: 24px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.top {
+    box-sizing: border-box;
+    display: flex;
+    height: 52px;
+    justify-content: space-between;
+    padding: 0 16px;
+    position: relative;
+    tab-size: 4;
+    text-size-adjust: 100%;
+}
+
+
+
+.nav-left {
+    display: flex;
 }
 
 .site-logo img {
     height: 40px;
 }
 
-#quick-menu-toggle {
-    display: none;
+.search-bar {
 }
 
-#quick-menu-list {
+
+
+.quick-menu {
     display: flex;
 }
 
-.quick-menu ul {
-    list-style: none;
-}
-
-.quick-menu  ul li {
-    float: left;
-    margin-right: 10px;
-}
-
-.quick-menu #site-info-list {
+.quick-menu-toggle {
     display: none;
 }
 
+.quick-menu-list {
+    display: flex;
+}
+
+.quick-menu-link {
+    display: flex;
+    box-sizing: border-box;
+    margin-right: 8px;
+    transition: all 0.1 ease-out 0s;
+}
+
+.quick-menu-link .label {
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+    color: rgb(112, 112, 112);
+    column-gap: 2px;
+    line-height: 14.3px;
+    margin-left: 16px;
+    padding: 16px 0px 15px 0px;
+    row-gap: 2px;
+    text-decoration: none rgb(112, 112, 112) auto;
+}
+
+.quick-menu-link .label:hover {
+    border-bottom-color: rgb(109, 85, 255);
+    text-decoration-color: rgb(109, 85, 255) ;
+
+}
+
+.site-info {
+    cursor: default;
+}
+
+.quick-menu .site-info:hover .site-info-list {
+    display: flex;
+}
+
+.quick-menu .site-info-list {
+    align-items: flex-start;
+    backdrop-filter: saturate(1.8) blur(20px) brigthness(1.1);
+    background-color: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 0px 12px 0px;
+    box-sizing: content-box;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    line-height: 20.8px;
+    padding: 4px;
+    position: absolute;
+    top: calc(100%+2px);
+    transition: all 0.1s ease-out 0s;
+    width: fit-content;
+}
+
+.site-info-link:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.site-info-link {
+    align-items: center;
+    border-radius: 8px;
+    border-image-width: 1px;
+    box-sizing: border-box;
+    color: rgb(142, 142, 142);
+    column-gap: 2px;
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+    line-height: 15.6px;
+    padding: 6px 8px;
+    text-decoration: none rgb(142, 142, 142) auto;
+    transition: all 0.1s ease-out 0s;
+}
+
+.quick-menu-seperator {
+    width: 1px;
+    height: 16px;
+    margin: 0px 1rem;
+    display: block;
+    background-color: rgb(234, 234, 236);
+}
+
+.quick-menu-button {
+    display: flex;
+}
+
+.login-button {
+    margin-left: 8px;
+}
+
+.signup-button:hover {
+    background-color: rgba(109, 85, 255, 0);
+    color: rgb(109, 85, 255);
+    box-shadow: rgba(109, 85, 255, 0.4) 0px 0px 0px 3px;
+}
+
+.signup-button {
+    background-color: rgb(109, 85, 255);
+    border: 1px solid rgb(109, 85, 255);
+    color: white;
+    margin-left: 8px;
+}
+
+/* ~헤더 스타일 지정 */
+
+
+
+
+
+/* 태그 구분자 별 기본 스타일 지정 ~ */
+* {
+    align-items: center;
+}
+button:hover {
+    background-color: rgb(234, 234, 236);
+}
+
+button {
+    align-items: flex-start;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(234, 234, 236);
+    border-radius: 20px;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    padding: 12px;
+    text-decoration:  none rgb(0, 0, 0) auto;
+    transition: all 0.1s ease-out 0s;
+}

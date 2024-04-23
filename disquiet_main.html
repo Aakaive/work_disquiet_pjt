@@ -9,30 +9,37 @@
 <body>
 
 <header>
-    <div class="site-logo">
-        <a href="disquiet_main.html"><img src="site_logo_large.png" alt="Disquiet*"></a>
-    </div>
-    <div class="search-bar">
-        <input type="text" placeholder="검색어를 입력하세요">
-        <button type="submit">검색</button>
-    </div>
-    <div class="quick-menu">
-        <button id="quick-menu-toggle"><i class="fas fa bars"></i></button>
-        <ul id="quick-menu-list">
-            <li id="site-info">사이트 소개</li>
-                <ul id="site-info-list">
-                    <li><a href="#">기능</a></li>
-                    <li><a href="#">Ethos</a></li>
-                    <li><a href="#">커뮤니티 가이드라인</a></li>
-                </ul>
-            <li><a href="#">메이커 클럽</a></li>
-            <li><a href="#">채용 공고</a></li>
-            <div id="quick-menu-seperator"></div>
-            <div class="quick-menu-button">
-                <li><button class="login-button">로그인</button></li>
-                <li><button class="signup-button">회원가입</button></li>
-            </div>    
-        </ul>
+    <div class="top">
+        <div class="nav-left">
+            <div class="site-logo">
+                <a href="disquiet_main.html"><img src="site_logo_large.png" alt="Disquiet*"></a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="디스콰이엇 검색하기">
+            </div>
+        </div>
+        <div class="quick-menu">
+            <button class="quick-menu-toggle"><i class="fas fa bars"></i></button>
+            <div class="quick-menu-list">
+                <div class="quick-menu-link">
+                    <div class="site-info">
+                        <div class="label">사이트 소개</div>
+                        <div class="site-info-list">
+                            <a class="site-info-link" href="#">기능</a>
+                            <a class="site-info-link" href="#">Ethos</a>
+                            <a class="site-info-link" href="#">커뮤니티 가이드라인</a>
+                        </div>
+                    </div>
+                    <a class="label" href="#">메이커 클럽</a>
+                    <a class="label" href="#">채용 공고</a>
+                </div>
+                <div class="quick-menu-seperator"></div>
+                <div class="quick-menu-button">
+                    <button class="login-button">로그인</button>                
+                    <button class="signup-button">회원가입</button>
+                </div>    
+            </div>
+        </div>
     </div>
 </header>
 
