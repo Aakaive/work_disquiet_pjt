@@ -3,17 +3,13 @@
 body {
     display: block;
     font-family: Arial, sans-serif;
-    font-size: 13px;
     font-stretch: 100%;
     font-weight: 400;
-    line-height: 14px;
+    line-height: 24px;
     tab-size: 4;
     text-size-adjust: 100%;
-    text-wrap: nowrap;
     overflow: visible;
     touch-action: auto;
-    height: 100%;
-    width: 100%;
     margin: 0;
     background-color: rgb(245, 245, 247);
     cursor: default;
@@ -25,27 +21,29 @@ header {
     background-color: rgba(255, 255, 255, 0.72);
     border-image-width: 1px;
     box-shadow: rgb(234, 234, 236) 0px 1px 0px 0px;
-    box-sizing: border-box;
     display: block;
-    line-height: 24px;
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     z-index: 100;
 }
 
+.top * {
+    align-items: center;
+}
+
 .top {
-    box-sizing: border-box;
     display: flex;
     height: 52px;
     justify-content: space-between;
+    line-height: 14px;
+    margin: auto;
+    max-width: 1280px;
     padding: 0 16px;
     position: relative;
     tab-size: 4;
     text-size-adjust: 100%;
 }
-
-
 
 .nav-left {
     display: flex;
@@ -75,13 +73,13 @@ header {
 .quick-menu-link {
     display: flex;
     box-sizing: border-box;
+    font-size: 13px;
     margin-right: 8px;
     transition: all 0.1 ease-out 0s;
 }
 
 .quick-menu-link .label {
     border-bottom: 2px solid rgba(0, 0, 0, 0);
-    box-sizing: border-box;
     color: rgb(112, 112, 112);
     column-gap: 2px;
     line-height: 14.3px;
@@ -112,7 +110,6 @@ header {
     border: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.04) 0px 0px 12px 0px;
-    box-sizing: content-box;
     display: none;
     flex-direction: column;
     width: 100%;
@@ -132,7 +129,6 @@ header {
     align-items: center;
     border-radius: 8px;
     border-image-width: 1px;
-    box-sizing: border-box;
     color: rgb(142, 142, 142);
     column-gap: 2px;
     cursor: pointer;
@@ -154,6 +150,7 @@ header {
 
 .quick-menu-button {
     display: flex;
+    flex-direction: row;
 }
 
 .login-button {
@@ -178,26 +175,185 @@ header {
 /* 메인 스타일~~ */
 
 main {
-    align-items: stretch;
-    box-sizing: border-box;
     column-gap: 64px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: calc(100vh - 52px);
+    grid-template-columns: 2.5fr 7fr 3fr;
+    height: auto;
     line-height: 24px;
+    margin: auto;
+    max-width: 1280px;
     padding: 8px 16px;
-    margin-top: 52px;
     position: relative;
+    width: auto;
     z-index: 0;
 }
 
+
+
 .left {
-    width: 176px; /* 화면 너비에 따라 너비 변화해야 함. 최소가 176*/
-    position: fixed;
+    display: block;
+    min-width: 176px; /* 화면 너비에 따라 너비 변화해야 함. 최소가 176*/
 }
 
+.left-menu {
+    column-gap: 32px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 32px;
+    margin-bottom: 24px;
+    position: sticky;
+    row-gap: 32px;
+}
+
+.left-menu-out {
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+}
+
+.left-menu-in {
+    background-color: rgb(255, 255, 255);
+    column-gap: 8px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    row-gap: 8px;
+    width: 100%;
+}
+
+.left-menu-toggle {
+    align-items: center;
+    column-gap: 4px;
+    display: flex;
+    column-gap: 4px;
+    row-gap: 4px;
+}
+
+.left-menu-shutter {
+    display: flex;
+    opacity: 1;
+    position: relative;
+    transform-origin: 104px 0px;
+    width: 100%;
+}
+
+.left-menu-list-cover {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+    width: 100%;
+    position: relative;
+}
+
+.left-menu-list {
+    column-gap: 2px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    left: 4px;
+    max-height: 400px;
+    overflow: visible scroll;
+    position: relative;
+    row-gap: 2px;
+    width: calc(100% + 8px);
+}
+
+.left-menu-list::-webkit-scrollbar {
+    width: 6px;
+    height: 0px;
+    background-color: transparent;
+}
+
+.left-menu-list::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: rgb(234, 234, 236);
+}
+
+.left-menu-list::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: transparent;
+}
+
+.left-menu-list .topic:hover {
+    background-color: rgb(245, 245, 247);
+}
+
+.topic {
+    align-items: flex-start;
+    background-color: rgb(255, 255, 255);
+    border: 0px;
+    border-radius: 10px;
+    column-gap: 8px;
+    display: flex;
+    font-size: 12px;
+    letter-spacing: normal;
+    line-height: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 8px;
+    padding-left: 10px;
+    position: relative;
+    row-gap: 8px;
+    text-align: left;
+    width: calc(100% - 2px);
+}
+
+.left-menu-list .overlay {
+    background-attachment: scroll;
+    bottom: -4px;
+    display: block;
+    height: 14px;
+    position: absolute;
+    width: 100%;
+}
+
+
+
 .center {
-    margin-left: 200px;
+    display: block;
+    margin-top: 32px;
+    min-width: 478px;
+    position: relative;
+}
+
+.center-post {
+    display: flex;
+    flex-direction: column;
+}
+
+.center-tab {
+    display: flex;
+    flex-direction: column;
+}
+
+.center-content {
+    display: block;
+}
+
+.content-post {
+    height: 400px;
+}
+
+
+
+.right {
+    display: block;
+    margin-top: 32px;
+    min-width: 246px;
+
+}
+
+.right .right-box {
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    width: 100%;
+    height: 100%;
+    margin-top: 28px;
 }
 
 
@@ -208,7 +364,9 @@ main {
 
 /* 태그 구분자 별 기본 스타일 지정 ~ */
 * {
-    align-items: center;
+    box-sizing: border-box;
+    scrollbar-width: auto;
+    scrollbar-color: auto;
 }
 button:hover {
     background-color: rgb(234, 234, 236);
@@ -224,6 +382,7 @@ button {
     cursor: pointer;
     display: block;
     font-size: 14px;
+    line-height: 14px;
     padding: 12px;
     text-decoration:  none rgb(0, 0, 0) auto;
     transition: all 0.1s ease-out 0s;
