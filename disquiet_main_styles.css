@@ -192,14 +192,15 @@ main {
 
 .left {
     display: block;
+    height: 100%;
     min-width: 176px; /* 화면 너비에 따라 너비 변화해야 함. 최소가 176*/
+    position: relative;
 }
 
 .left-menu {
     column-gap: 32px;
     display: flex;
     flex-direction: column;
-    height: 100%;
     margin-top: 32px;
     margin-bottom: 24px;
     position: sticky;
@@ -220,7 +221,6 @@ main {
     column-gap: 8px;
     display: flex;
     flex-direction: column;
-    height: 100%;
     row-gap: 8px;
     width: 100%;
 }
@@ -257,10 +257,15 @@ main {
     height: 100%;
     left: 4px;
     max-height: 400px;
-    overflow: visible scroll;
+    overflow-x: auto;
+    overflow-y: visible;
     position: relative;
     row-gap: 2px;
     width: calc(100% + 8px);
+}
+
+.left-menu-list:hover::-webkit-scrollbar-thumb {
+    background-color: rgb(234, 234, 236);
 }
 
 .left-menu-list::-webkit-scrollbar {
@@ -269,9 +274,9 @@ main {
     background-color: transparent;
 }
 
-.left-menu-list::-webkit-scrollbar-thumb {
+.left-menu-list::-webkit-scrollbar-thumb:hover {
     border-radius: 8px;
-    background-color: rgb(234, 234, 236);
+    background-color: transparent;
 }
 
 .left-menu-list::-webkit-scrollbar-track {
@@ -368,6 +373,8 @@ main {
     scrollbar-width: auto;
     scrollbar-color: auto;
 }
+
+
 button:hover {
     background-color: rgb(234, 234, 236);
 }
