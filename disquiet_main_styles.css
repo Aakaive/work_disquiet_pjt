@@ -2,30 +2,30 @@
 
 body {
     display: block;
+    margin: 0;
     font-family: Arial, sans-serif;
-    font-stretch: 100%;
     font-weight: 400;
     line-height: 24px;
+    background-color: rgb(245, 245, 247);
+    overflow: visible;
+    cursor: default;
+    font-stretch: 100%;
     tab-size: 4;
     text-size-adjust: 100%;
-    overflow: visible;
     touch-action: auto;
-    margin: 0;
-    background-color: rgb(245, 245, 247);
-    cursor: default;
 }
 
 /* 헤더 스타일 지정~ */
 
 header {
-    position: sticky;
     display: block;
+    position: sticky;
     top: 0;
-    background-color: rgba(255, 255, 255, 0.72);
-    border-image-width: 1px;
-    box-shadow: rgb(234, 234, 236) 0px 1px 0px 0px;
-    width: 100%;
     z-index: 100;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.72);
+    box-shadow: rgb(234, 234, 236) 0px 1px 0px 0px;
+    border-image-width: 1px;
 }
 
 .top * {
@@ -34,13 +34,13 @@ header {
 
 .top {
     display: flex;
-    height: 52px;
-    justify-content: space-between;
-    line-height: 14px;
-    margin: auto;
-    max-width: 1280px;
-    padding: 0 16px;
     position: relative;
+    max-width: 1280px;
+    height: 52px;
+    margin: auto;
+    padding: 0 16px;
+    line-height: 14px;
+    justify-content: space-between;
     tab-size: 4;
     text-size-adjust: 100%;
 }
@@ -64,18 +64,18 @@ header {
 }
 
 .quick-menu-toggle {
-    align-items: center;
-    color: rgb(164, 164, 166);
     display: none;
-    font-size: 16px;
-    flex-direction: column;
-    height: 32px;
-    justify-content: center;
-    margin-left: 4px;
     width: 32px;
+    height: 32px;
+    margin-left: 4px;
+    color: rgb(164, 164, 166);
+    font-size: 16px;
     text-align: center;
-    border-radius: 320px;
     border: 0px;
+    border-radius: 320px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
@@ -86,20 +86,20 @@ header {
 
 .quick-menu-link {
     display: flex;
-    font-size: 13px;
     margin-right: 8px;
+    font-size: 13px;
     transition: all 0.1 ease-out 0s;
 }
 
 .quick-menu-link .label {
-    border-bottom: 2px solid rgba(0, 0, 0, 0);
-    color: rgb(112, 112, 112);
-    column-gap: 2px;
-    line-height: 14.3px;
     margin-left: 16px;
     padding: 16px 0px 15px 0px;
-    row-gap: 2px;
+    color: rgb(112, 112, 112);
+    line-height: 14.3px;
     text-decoration: none rgb(112, 112, 112) auto;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+    column-gap: 2px;
+    row-gap: 2px;
 }
 
 .quick-menu-link .label:hover {
@@ -116,21 +116,21 @@ header {
 }
 
 .quick-menu .site-info .site-info-list {
-    align-items: flex-start;
-    backdrop-filter: saturate(1.8) blur(20px) brigthness(1.1);
+    display: none;
+    position: absolute;
+    top: calc(100%+2px);
+    width: 100%;
+    width: fit-content;
+    padding: 4px;
+    line-height: 20.8px;
     background-color: rgba(255, 255, 255, 0.72);
     border: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.04) 0px 0px 12px 0px;
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    line-height: 20.8px;
-    padding: 4px;
-    position: absolute;
-    top: calc(100%+2px);
     transition: all 0.1s ease-out 0s;
-    width: fit-content;
+    align-items: flex-start;
+    backdrop-filter: saturate(1.8) blur(20px) brigthness(1.1);
+    flex-direction: column;
 }
 
 .site-info-link:hover {
@@ -138,25 +138,25 @@ header {
 }
 
 .site-info-link {
-    align-items: center;
-    border-radius: 8px;
-    border-image-width: 1px;
-    color: rgb(142, 142, 142);
-    column-gap: 2px;
-    cursor: pointer;
     display: flex;
     width: 100%;
-    line-height: 15.6px;
     padding: 6px 8px;
+    color: rgb(142, 142, 142);
+    line-height: 15.6px;
     text-decoration: none rgb(142, 142, 142) auto;
+    border-radius: 8px;
+    cursor: pointer;
     transition: all 0.1s ease-out 0s;
+    align-items: center;
+    border-image-width: 1px;
+    column-gap: 2px;
 }
 
 .quick-menu-seperator {
+    display: block;
     width: 1px;
     height: 16px;
     margin: 0px 1rem;
-    display: block;
     background-color: rgb(234, 234, 236);
 }
 
@@ -170,16 +170,16 @@ header {
 }
 
 .signup-button:hover {
-    background-color: rgba(109, 85, 255, 0);
     color: rgb(109, 85, 255);
+    background-color: rgba(109, 85, 255, 0);
     box-shadow: rgba(109, 85, 255, 0.4) 0px 0px 0px 3px;
 }
 
 .signup-button {
+    margin-left: 8px;
+    color: white;
     background-color: rgb(109, 85, 255);
     border: 1px solid rgb(109, 85, 255);
-    color: white;
-    margin-left: 8px;
 }
 
 /* ~~헤더 스타일 지정 */
@@ -187,92 +187,92 @@ header {
 /* 메인 스타일~~ */
 
 main {
-    column-gap: 64px;
     display: grid;
-    grid-template-columns: 2.5fr 7fr 3fr;
-    height: auto;
-    line-height: 24px;
-    margin: auto;
-    max-width: 1280px;
-    padding: 8px 16px;
     position: relative;
-    width: auto;
     z-index: 0;
+    width: auto;
+    max-width: 1280px;
+    height: auto;
+    margin: auto;
+    padding: 8px 16px;
+    line-height: 24px;
+    column-gap: 64px;
+    grid-template-columns: 2.5fr 7fr 3fr;
 }
 
 
 
 .left {
     display: block;
-    height: 100%;
     position: relative;
+    height: 100%;
 }
 
 .left-menu {
-    column-gap: 32px;
     display: flex;
-    flex-direction: column;
+    position: sticky;
     margin-top: 32px;
     margin-bottom: 24px;
-    position: sticky;
+    column-gap: 32px;
+    flex-direction: column;
     row-gap: 32px;
 }
 
 .left-menu-out {
-    align-items: center;
+    display: flex;
+    padding: 8px;
     background-color: rgb(255, 255, 255);
     border-radius: 16px;
-    display: flex;
+    align-items: center;
     flex-direction: column;
-    padding: 8px;
 }
 
 .left-menu-in {
+    display: flex;
+    width: 100%;
     background-color: rgb(255, 255, 255);
     column-gap: 8px;
-    display: flex;
     flex-direction: column;
     row-gap: 8px;
-    width: 100%;
 }
 
 .left-menu-toggle {
+    display: flex;
     align-items: center;
     column-gap: 4px;
-    display: flex;
     column-gap: 4px;
     row-gap: 4px;
 }
 
 .left-menu-shutter {
     display: flex;
-    opacity: 1;
     position: relative;
-    transform-origin: 104px 0px;
     width: 100%;
+    opacity: 1;
+    transform-origin: 104px 0px;
 }
 
 .left-menu-list-cover {
-    align-items: center;
     display: flex;
-    flex-direction: column;
-    margin-bottom: 8px;
-    width: 100%;
     position: relative;
+    width: 100%;
+    margin-bottom: 8px;
+    align-items: center;
+    flex-direction: column;
 }
 
 .left-menu-list {
-    column-gap: 2px;
     display: flex;
-    flex-direction: column;
-    height: 100%;
+    position: relative;
     left: 4px;
+    width: calc(100% + 8px);
+    height: 100%;
     max-height: 400px;
+    column-gap: 2px;
+    flex-direction: column;
     overflow-x: auto;
     overflow-y: visible;
-    position: relative;
     row-gap: 2px;
-    width: calc(100% + 8px);
 }
 
 .left-menu-list:hover::-webkit-scrollbar-thumb {
@@ -286,13 +286,13 @@ main {
 }
 
 .left-menu-list::-webkit-scrollbar-thumb:hover {
-    border-radius: 8px;
     background-color: transparent;
+    border-radius: 8px;
 }
 
 .left-menu-list::-webkit-scrollbar-track {
-    border-radius: 8px;
     background-color: transparent;
+    border-radius: 8px;
 }
 
 .left-menu-list .topic:hover {
@@ -300,41 +300,41 @@ main {
 }
 
 .topic {
-    align-items: flex-start;
+    display: flex;
+    position: relative;
+    width: calc(100% - 2px);
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: normal;
+    text-align: left;
     background-color: rgb(255, 255, 255);
     border: 0px;
     border-radius: 10px;
+    align-items: flex-start;
     column-gap: 8px;
-    display: flex;
-    font-size: 12px;
-    letter-spacing: normal;
-    line-height: 12px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-right: 8px;
-    padding-left: 10px;
-    position: relative;
     row-gap: 8px;
-    text-align: left;
-    width: calc(100% - 2px);
 }
 
 .left-menu-list .overlay {
-    background-attachment: scroll;
-    bottom: -4px;
     display: block;
-    height: 14px;
     position: absolute;
+    bottom: -4px;
     width: 100%;
+    height: 14px;
+    background-attachment: scroll;
 }
 
 
 
 .center {
     display: block;
-    margin-top: 32px;
-    min-width: 478px;
     position: relative;
+    min-width: 478px;
+    margin-top: 32px;
 }
 
 .center-post {
@@ -359,9 +359,9 @@ main {
 
 .right {
     display: block;
-    margin-top: 32px;
     min-width: 246px;
     height: 100%;
+    margin-top: 32px;
 }
 
 .right .section-1 {
@@ -375,11 +375,11 @@ main {
 }
 
 .right .content-box {
-    background-color: rgb(255, 255, 255);
-    border-radius: 12px;
     width: 100%;
     height: 150px;
     margin-top: 28px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
 }
 
 
@@ -402,10 +402,10 @@ main {
         position: absolute;
         top: calc(100% + 5px);
         right: 2px;
-        border-radius: 12px;
-        background-color: white;
         width: 216px;
         padding: 4px;
+        background-color: white;
+        border-radius: 12px;
     }
 
     .quick-menu-list.show .quick-menu-link {
@@ -414,11 +414,11 @@ main {
 
     .quick-menu-list.show .quick-menu-button {
         display: flex;
+        width: 100%;
+        margin-top: 6px;
         flex-direction: column;
         column-gap: 6px;
         row-gap: 6px;
-        margin-top: 6px;
-        width: 100%;
     }
 
     .quick-menu-list.show .quick-menu-button * {
@@ -461,17 +461,17 @@ button:hover {
 }
 
 button {
-    align-items: flex-start;
+    display: block;
+    padding: 12px;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    line-height: 14px;
+    text-decoration:  none rgb(0, 0, 0) auto;
     background-color: rgb(255, 255, 255);
     border: 1px solid rgb(234, 234, 236);
     border-radius: 20px;
-    box-sizing: border-box;
-    color: rgb(0, 0, 0);
     cursor: pointer;
-    display: block;
-    font-size: 14px;
-    line-height: 14px;
-    padding: 12px;
-    text-decoration:  none rgb(0, 0, 0) auto;
     transition: all 0.1s ease-out 0s;
+    align-items: flex-start;
 }
