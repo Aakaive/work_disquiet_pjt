@@ -28,10 +28,6 @@ header {
     border-image-width: 1px;
 }
 
-.top * {
-    align-items: center;
-}
-
 .top {
     display: flex;
     position: relative;
@@ -43,10 +39,16 @@ header {
     justify-content: space-between;
     tab-size: 4;
     text-size-adjust: 100%;
+    align-items: center;
 }
 
 .top .nav-left {
     display: flex;
+    align-items: center;
+}
+
+.site-logo {
+    align-items: center;
 }
 
 .site-logo img {
@@ -82,6 +84,7 @@ header {
 
 .quick-menu-list {
     display: flex;
+    align-items: center;
 }
 
 .quick-menu-link {
@@ -163,6 +166,10 @@ header {
 .quick-menu-button {
     display: flex;
     flex-direction: row;
+}
+
+.quick-menu-button * {
+    font-size: 13px;
 }
 
 .login-button {
@@ -401,30 +408,53 @@ main {
         display: block;
         position: absolute;
         top: calc(100% + 5px);
-        right: 2px;
-        width: 216px;
+        right: 11.2px;
+        width: 224px;
         padding: 4px;
         background-color: white;
-        border-radius: 12px;
+        border-radius: 16px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px;
     }
 
     .quick-menu-list.show .quick-menu-link {
         display: block;
     }
 
+    .quick-menu-list.show .quick-menu-link .label {
+        height: auto;
+        margin: 0;
+        padding: 6px 8px 6px 8px;
+        line-height: 24px;
+        border-radius: 12px;
+        border-bottom: none;
+    }
+
+    .quick-menu-list.show .quick-menu-link .label:hover {
+        text-decoration: none;
+        background-color: rgb(246, 246, 248);
+    }
+
+    .quick-menu-list.show .quick-menu-seperator {
+        width: calc(100% - 8px);
+        height: 1px;
+        margin: 4px 0px;
+    }
+
     .quick-menu-list.show .quick-menu-button {
         display: flex;
         width: 100%;
         margin-top: 6px;
+        margin-top: 6px;
+        padding: 4px;
         flex-direction: column;
         column-gap: 6px;
         row-gap: 6px;
     }
 
-    .quick-menu-list.show .quick-menu-button * {
+    .quick-menu-list.show .quick-menu-button button {
         width: 100%;
         margin: 0;
-        padding: 12px;
+        border-radius: 12px;
     }
 
     .left {
