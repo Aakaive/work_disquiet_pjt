@@ -18,12 +18,12 @@ body {
 /* 헤더 스타일 지정~ */
 
 header {
+    position: sticky;
+    display: block;
+    top: 0;
     background-color: rgba(255, 255, 255, 0.72);
     border-image-width: 1px;
     box-shadow: rgb(234, 234, 236) 0px 1px 0px 0px;
-    display: block;
-    position: sticky;
-    top: 0;
     width: 100%;
     z-index: 100;
 }
@@ -45,13 +45,14 @@ header {
     text-size-adjust: 100%;
 }
 
-.nav-left {
+.top .nav-left {
     display: flex;
 }
 
 .site-logo img {
     height: 40px;
 }
+
 /* 
 .search-bar {
 } */
@@ -63,8 +64,21 @@ header {
 }
 
 .quick-menu-toggle {
+    align-items: center;
+    color: rgb(164, 164, 166);
     display: none;
+    font-size: 16px;
+    flex-direction: column;
+    height: 32px;
+    justify-content: center;
+    margin-left: 4px;
+    width: 32px;
+    text-align: center;
+    border-radius: 320px;
+    border: 0px;
 }
+
+
 
 .quick-menu-list {
     display: flex;
@@ -72,7 +86,6 @@ header {
 
 .quick-menu-link {
     display: flex;
-    box-sizing: border-box;
     font-size: 13px;
     margin-right: 8px;
     transition: all 0.1 ease-out 0s;
@@ -92,7 +105,6 @@ header {
 .quick-menu-link .label:hover {
     border-bottom-color: rgb(109, 85, 255);
     text-decoration-color: rgb(109, 85, 255) ;
-
 }
 
 .site-info {
@@ -103,7 +115,7 @@ header {
     display: flex;
 }
 
-.quick-menu .site-info-list {
+.quick-menu .site-info .site-info-list {
     align-items: flex-start;
     backdrop-filter: saturate(1.8) blur(20px) brigthness(1.1);
     background-color: rgba(255, 255, 255, 0.72);
@@ -193,7 +205,6 @@ main {
 .left {
     display: block;
     height: 100%;
-    min-width: 176px; /* 화면 너비에 따라 너비 변화해야 함. 최소가 176*/
     position: relative;
 }
 
@@ -350,14 +361,24 @@ main {
     display: block;
     margin-top: 32px;
     min-width: 246px;
-
+    height: 100%;
 }
 
-.right .right-box {
+.right .section-1 {
+    display: block;
+}
+
+.right .section-2 {
+    display: block;
+    position: sticky;
+    top: 88px;
+}
+
+.right .content-box {
     background-color: rgb(255, 255, 255);
     border-radius: 12px;
     width: 100%;
-    height: 100%;
+    height: 150px;
     margin-top: 28px;
 }
 
@@ -365,7 +386,67 @@ main {
 /* ~~메인 스타일 */
 
 
+/* 미디어 쿼리(중간)~~ */
 
+@media only screen and (max-width: 1024px) {
+    .quick-menu-toggle {
+        display: block;
+    }
+    
+    .quick-menu-list {
+        display: none;
+    }
+
+    .quick-menu-list.show {
+        display: block;
+        position: absolute;
+        top: calc(100% + 5px);
+        right: 2px;
+        border-radius: 12px;
+        background-color: white;
+        width: 216px;
+        padding: 4px;
+    }
+
+    .quick-menu-list.show .quick-menu-link {
+        display: block;
+    }
+
+    .quick-menu-list.show .quick-menu-button {
+        display: flex;
+        flex-direction: column;
+        column-gap: 6px;
+        row-gap: 6px;
+        margin-top: 6px;
+        width: 100%;
+    }
+
+    .quick-menu-list.show .quick-menu-button * {
+        width: 100%;
+        margin: 0;
+        padding: 12px;
+    }
+
+    .left {
+        display: none;
+    }
+
+    .right {
+        display: none;
+    }
+}
+
+/* ~~미디어 쿼리(중간) */
+
+
+
+/* 미디어 쿼리(모바일)~~ */
+
+@media only screen and (max-width: 640px) {
+
+}
+
+/* ~~미디어 쿼리(모바일) */
 
 /* 태그 구분자 별 기본 스타일 지정 ~ */
 * {
