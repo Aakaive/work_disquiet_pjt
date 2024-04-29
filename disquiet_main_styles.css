@@ -245,10 +245,18 @@ main {
 
 .left-menu-toggle {
     display: flex;
+    font-size: 13px;
+    cursor: pointer;
     align-items: center;
     column-gap: 4px;
     column-gap: 4px;
     row-gap: 4px;
+}
+
+.left-menu-toggle i{
+    height: 24px;
+    width: 24px;
+    transition: 0.1s all ease-out 0s;
 }
 
 .left-menu-shutter {
@@ -257,6 +265,10 @@ main {
     width: 100%;
     opacity: 1;
     transform-origin: 104px 0px;
+}
+
+.left-menu.show .left-menu-shutter {
+    display: none;
 }
 
 .left-menu-list-cover {
@@ -280,6 +292,7 @@ main {
     overflow-x: auto;
     overflow-y: visible;
     row-gap: 2px;
+    transition: 0.3s all ease-in-out 0s;
 }
 
 .left-menu-list:hover::-webkit-scrollbar-thumb {

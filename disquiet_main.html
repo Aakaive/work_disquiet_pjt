@@ -11,6 +11,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             var quickMenuToggle = document.getElementById('quick-menu-toggle');
             var quickMenuList = document.getElementById('quick-menu-list');
+            var topicToggle = document.getElementById('left-menu-toggle');
+            var topicMenu = document.getElementById('left-menu');
     
             quickMenuToggle.addEventListener('click', function() {
                 if (quickMenuList.classList.contains('show')) {
@@ -19,7 +21,17 @@
                 } else {
             // 퀵 메뉴 리스트가 표시되어 있지 않으면 표시하기
                     quickMenuList.classList.add('show');
-                    quickMenuToggle.innerHTML = '<i class="fas fa-times"></i>'; // X 버튼 아이콘으로 변경
+                    quickMenuToggle.innerHTML = '<i class="fas fa-times"></i><div>토픽</div>'; // X 버튼 아이콘으로 변경
+                }
+            });
+
+            topicToggle.addEventListener('click', function() {
+                if(topicMenu.classList.contains('show')) {
+                    topicMenu.classList.remove('show');
+                    topicToggle.innerHTML = '<i class="fas fa-caret-up"></i><div>토픽</div>';
+                } else {
+                    topicMenu.classList.add('show');
+                    topicToggle.innerHTML = '<i class="fa-solid fa-caret-right"></i><div>토픽</div>';
                 }
             });
         });
@@ -66,11 +78,11 @@
 
 <main>
     <section class="left">                                               <!--메인 좌측 컨텐츠-->
-        <div class="left-menu">
+        <div id="left-menu" class="left-menu">
             <div class="left-menu-out">
                 <div class="left-menu-in">                  <!--토픽 카테고리 리스트-->
-                    <div class="left-menu-toggle">                                       <!--리스트 닫은 상태에서 보여지는 항목-->
-                        <i>                                     <!--토픽 옆에 화살표 아이콘 구해서 붙이기--> </i>
+                    <div id="left-menu-toggle" class="left-menu-toggle">                                       <!--리스트 닫은 상태에서 보여지는 항목-->
+                        <i class="fas fa-caret-up"></i>
                         <div>토픽</div>
                     </div>
                     <div class="left-menu-shutter">
