@@ -368,28 +368,29 @@ main {
 }
 
 .center-post .post-wrap {
-    position: relative;
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
 .center-post .user-icon {
-    width: 42px;
-    height: 42px;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 1px;
     background-color: black;
-    border-radius: 21px;
-    border: 10px solid rgb(236, 236, 255);
+    border-radius: 20px;
+    border: 10px solid rgb(238, 238, 255);
 }
 
 .center-post .user-icon .fa-face-smile {
     position: relative;
-    bottom: 11px;
-    right: 10px;
-    font-size: 26px;
-    padding: 7px;
+    top: -12px;
+    left: -11px;
+    font-size: 28px;
+    padding: 6px;
     background-color: transparent;
-    color: rgb(236, 236, 255);
+    color: rgb(238, 238, 255);
     border: 1px solid rgba(0, 0, 0, 0);
 }
 
@@ -421,7 +422,7 @@ main {
 }
 
 .center-post .share {
-    color: rgb(112, 112, 112);
+    color: rgb(142, 142, 142);
     position: relative;
     left: 52px;
     width: fit-content;
