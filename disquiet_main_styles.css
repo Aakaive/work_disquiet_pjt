@@ -223,6 +223,7 @@ main {
     column-gap: 32px;
     flex-direction: column;
     row-gap: 32px;
+    transition: 0.1s all ease-out 0s;
 }
 
 .left-menu-out {
@@ -253,10 +254,16 @@ main {
     row-gap: 4px;
 }
 
-.left-menu-toggle i{
-    height: 24px;
+.left-menu-toggle i {
     width: 24px;
-    transition: 0.1s all ease-out 0s;
+    height: 24px;
+}
+
+.left-menu-toggle .fas, .fa-solid {
+    align-items: center;
+    text-align: center;
+    justify-items: center;
+    line-height: 24px;
 }
 
 .left-menu-shutter {
