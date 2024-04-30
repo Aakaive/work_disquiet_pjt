@@ -21,14 +21,14 @@
                 } else {
             // 퀵 메뉴 리스트가 표시되어 있지 않으면 표시하기
                     quickMenuList.classList.add('show');
-                    quickMenuToggle.innerHTML = '<i class="fas fa-times"></i><div>토픽</div>'; // X 버튼 아이콘으로 변경
+                    quickMenuToggle.innerHTML = '<i class="fas fa-times"></i>'; // X 버튼 아이콘으로 변경
                 }
             });
 
             topicToggle.addEventListener('click', function() {
                 if(topicMenu.classList.contains('show')) {
                     topicMenu.classList.remove('show');
-                    topicToggle.innerHTML = '<i class="fas fa-caret-up"></i><div>토픽</div>';
+                    topicToggle.innerHTML = '<i class="fas fa-caret-down"></i><div>토픽</div>';
                 } else {
                     topicMenu.classList.add('show');
                     topicToggle.innerHTML = '<i class="fa-solid fa-caret-right"></i><div>토픽</div>';
@@ -82,7 +82,7 @@
             <div class="left-menu-out">
                 <div class="left-menu-in">                  <!--토픽 카테고리 리스트-->
                     <div id="left-menu-toggle" class="left-menu-toggle">                                       <!--리스트 닫은 상태에서 보여지는 항목-->
-                        <i class="fas fa-caret-up"></i>
+                        <i class="fas fa-caret-down"></i>
                         <div>토픽</div>
                     </div>
                     <div class="left-menu-shutter">
@@ -118,10 +118,29 @@
     </section>
     <section class="center">                                               <!--메인 중앙 컨텐츠-->
         <div class="center-post">
-            <h1>안녕</h1>
-            <h2>안녕하세요</h2>
+            <div class="post-wrap">
+                <div class="user-icon">
+                    <i class="fa-solid fa-face-smile"></i>
+                </div>
+                <button class="open-post">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <label class="text-holder">어떤 이야기를 나누고 싶나요?</label>
+                </button>
+            </div>
+            <button class="share">
+                <i class="fa-solid fa-cube"></i>
+                <label>프로덕트 공유</label>
+            </button>
         </div>
-        <div class="center-tab">전체</div>
+        <div class="center-tab"></div>
+            <label class="category">전체</label>
+            <label class="category">프로덕트</label>
+            <label class="category">메이커로그</label>
+            <label class="category">클럽</label>
+            <div class="sort">
+                <label class="category">추천</label>
+                <label class="category">최신</label>
+            </div>
         <div class="center-content">
             <div class="content-post">포스트</div>
             <div class="content-post">포스트</div>
