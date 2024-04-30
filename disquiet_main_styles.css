@@ -31,11 +31,12 @@ header {
 .top {
     display: flex;
     position: relative;
+    width: auto;
     max-width: 1280px;
     height: 52px;
+    min-height: 48px;
     margin: auto;
     padding: 0 16px;
-    line-height: 14px;
     justify-content: space-between;
     tab-size: 4;
     text-size-adjust: 100%;
@@ -45,14 +46,36 @@ header {
 .top .nav-left {
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 .site-logo {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.site-logo a {
+    display: flex;
+    padding-bottom: 4px;
     align-items: center;
 }
 
 .site-logo img {
-    height: 40px;
+    max-width: 100%;
+    margin-top: 2px;
+    max-height: 28px;
+    align-self: center;
+    overflow-x: clip;
+    overflow-y: clip;
+}
+
+.site-logo a .site-logo-large {
+    display: block;
+}
+
+.site-logo a .site-logo-small {
+    display: none;
 }
 
 /* 
@@ -63,6 +86,7 @@ header {
 
 .quick-menu {
     display: flex;
+    min-width: 404.02px;
 }
 
 .quick-menu-toggle {
@@ -106,8 +130,9 @@ header {
 }
 
 .quick-menu-link .label:hover {
+    color: rgb(109, 85, 255);
     border-bottom-color: rgb(109, 85, 255);
-    text-decoration-color: rgb(109, 85, 255) ;
+    text-decoration-color: rgb(109, 85, 255);
 }
 
 .site-info {
@@ -151,7 +176,7 @@ header {
     cursor: pointer;
     transition: all 0.1s ease-out 0s;
     align-items: center;
-    border-image-width: 1px;
+    /* border-image-width: 1px; */
     column-gap: 2px;
 }
 
@@ -329,6 +354,7 @@ main {
     padding-right: 8px;
     padding-bottom: 8px;
     padding-left: 10px;
+    color: rgb(68, 68, 68);
     font-size: 12px;
     line-height: 12px;
     letter-spacing: normal;
@@ -406,6 +432,12 @@ main {
     align-items: center;
 }
 
+.center-post .open-post:hover {
+    background-color: white;
+    border-color: rgb(109, 85, 255);
+    box-shadow: rgba(109, 85, 255, 0.4) 0px 0px 0px 3px;
+}
+
 .center-post .open-post i {
     width: 24px;
     height: 24px;
@@ -439,9 +471,76 @@ main {
     line-height: 16px;
 }
 
+.center-post .share:hover {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 4px 8px 0px;
+    transform: matrix(1, 0, 0, 1, 0, -1);
+}
+
+
 .center-tab {
     display: flex;
+    position: relative;
+    width: 100%;
     flex-direction: column;
+}
+
+.center-tab .tab-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.center-tab .tab-wrap .category {
+    display: flex;
+    gap: 24px;
+}
+
+.center-tab .tab-wrap .category label {
+    padding: 12px 0px 10px 0px;
+    box-sizing: content-box;
+    color: rgb(142, 142, 142);
+    font-size: 12px;
+    line-height: 12px;
+    cursor: pointer;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+
+.center-tab .tab-wrap .category label:hover {
+    z-index: 1;
+    color: rgb(109, 85, 255);
+    border-bottom-color: rgb(109, 85, 255);
+}
+
+.center-tab .tab-wrap .sort {
+    display: flex;
+}
+
+.center-tab .sort button {
+    padding: 0;
+    background-color: transparent;
+    border: 0px;
+}
+
+.center-tab .sort button label {
+    padding: 4px 6px 4px 6px;
+    color: rgb(142, 142, 142);
+    font-size: 12px;
+    line-height: 13.2px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.center-tab .sort button label:hover {
+    background-color: white;
+}
+
+.center-tab .seperator {
+    position: relative;
+    bottom: 1px;
+    z-index: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgb(234, 234, 236);
 }
 
 .center-content {
@@ -486,6 +585,10 @@ main {
 /* 미디어 쿼리(중간)~~ */
 
 @media only screen and (max-width: 1024px) {
+    .quick-menu {
+        min-width: min-content;
+    }
+
     .quick-menu-toggle {
         display: block;
     }
@@ -562,8 +665,14 @@ main {
 
 /* 미디어 쿼리(모바일)~~ */
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 600px) {
+    .site-logo a .site-logo-large {
+        display: none;
+    }
 
+    .site-logo a .site-logo-small {
+        display: block;
+    }
 }
 
 /* ~~미디어 쿼리(모바일) */

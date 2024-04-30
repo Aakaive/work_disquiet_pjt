@@ -43,7 +43,10 @@
     <div class="top">
         <div class="nav-left">
             <div class="site-logo">
-                <a href="disquiet_main.html"><img src="site_logo_large.png" alt="Disquiet*"></a>
+                <a href="disquiet_main.html">
+                    <img class="site-logo-large" src="logo_large.svg" alt="Disquiet*">
+                    <img class="site-logo-small" src="logo_small.svg" alt="D*">
+                </a>
             </div>
             <div class="search-bar">
                 <input type="text" placeholder="디스콰이엇 검색하기">
@@ -132,15 +135,25 @@
                 <label>프로덕트 공유</label>
             </button>
         </div>
-        <div class="center-tab"></div>
-            <label class="category">전체</label>
-            <label class="category">프로덕트</label>
-            <label class="category">메이커로그</label>
-            <label class="category">클럽</label>
-            <div class="sort">
-                <label class="category">추천</label>
-                <label class="category">최신</label>
+        <div class="center-tab">
+            <div class="tab-wrap">
+                <div class="category">
+                    <label id="all">전체</label>
+                    <label id="product">프로덕트</label>
+                    <label id="maker-log">메이커로그</label>
+                    <label id="club">클럽</label>
+                </div>
+                <div class="sort">
+                    <button id="recommend">
+                        <label>추천</label>
+                    </button>
+                    <button id="newest">
+                        <label>최신</label>
+                    </button>
+                </div>
             </div>
+            <div class="seperator"></div>
+        </div>
         <div class="center-content">
             <div class="content-post">포스트</div>
             <div class="content-post">포스트</div>
