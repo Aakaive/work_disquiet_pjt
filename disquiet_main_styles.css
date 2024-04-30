@@ -361,9 +361,9 @@ main {
 
 .center-post {
     display: flex;
+    position: relative;
     margin-bottom: 24px;
     flex-direction: column;
-    position: relative;
     gap: 6px;
 }
 
@@ -379,27 +379,27 @@ main {
     height: 40px;
     margin: 1px;
     background-color: black;
-    border-radius: 20px;
     border: 10px solid rgb(238, 238, 255);
+    border-radius: 20px;
 }
 
 .center-post .user-icon .fa-face-smile {
     position: relative;
     top: -12px;
     left: -11px;
-    font-size: 28px;
     padding: 6px;
-    background-color: transparent;
     color: rgb(238, 238, 255);
+    font-size: 28px;
+    background-color: transparent;
     border: 1px solid rgba(0, 0, 0, 0);
 }
 
 .center-post .open-post {
-    color: rgb(142, 142, 142);
     display: flex;
     width: 100%;
     height: 100%;
     padding: 4px;
+    color: rgb(142, 142, 142);
     border: 1px solid rgba(0, 0, 0, 0);
     border-radius: 10px;
     transition: 0.15s all ease-in-out 0s;
@@ -409,8 +409,8 @@ main {
 .center-post .open-post i {
     width: 24px;
     height: 24px;
-    line-height: 24px;
     margin-right: 4px;
+    line-height: 24px;
 }
 
 .center-post .open-post label {
@@ -422,21 +422,21 @@ main {
 }
 
 .center-post .share {
-    color: rgb(142, 142, 142);
     position: relative;
+    top: -4px;
     left: 52px;
     width: fit-content;
-    font-size: 12px;
     padding: 4px 8px 4px 4px;
-    border-radius: 8px;
+    color: rgb(142, 142, 142);
+    font-size: 12px;
     border: 0px;
-    top: -4px;
+    border-radius: 8px;
 }
 
 .center-post .share i {
     margin-right: 2px;
-    line-height: 16px;
     font-size: 12px;
+    line-height: 16px;
 }
 
 .center-tab {
