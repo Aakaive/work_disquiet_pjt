@@ -45,8 +45,8 @@ header {
 
 .top .nav-left {
     display: flex;
-    align-items: center;
     width: 100%;
+    align-items: center;
 }
 
 .site-logo {
@@ -87,6 +87,29 @@ header {
 .search-tool .tool-wrap {
     max-width: 192px;
     margin-left: 24px;
+}
+
+.search-tool .tool-wrap .search-bar {
+    display: flex;
+    padding: 6px 12px 6px 8px;
+    background-color: rgb(245, 245, 247);
+    border: 1px solid rgb(245, 245, 247);
+    border-radius: 10px;
+    align-items: center;
+}
+
+.search-tool .search-bar i {
+    margin-right: 4px;
+    color: rgb(142, 142, 142);
+}
+
+.search-tool .search-bar input {
+    width: 100%;
+    color: rgb(142, 142, 142);
+    font-size: 13px;
+    line-height: 14.3px;
+    background-color: transparent;
+    border-color: transparent;
 }
 
 
@@ -291,6 +314,7 @@ main {
     height: 24px;
     line-height: 24px;
     text-align: center;
+    color: rgb(0, 0, 42);
 }
 
 .left-menu-shutter {
