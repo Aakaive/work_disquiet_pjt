@@ -63,7 +63,6 @@ header {
 
 .site-logo img {
     max-width: 100%;
-    margin-top: 2px;
     max-height: 28px;
     align-self: center;
     overflow-x: clip;
@@ -72,15 +71,23 @@ header {
 
 .site-logo a .site-logo-large {
     display: block;
+    margin-top: 2px;
 }
 
 .site-logo a .site-logo-small {
     display: none;
+    padding-left: 2px;
 }
 
-/* 
-.search-bar {
-} */
+
+.search-tool {
+    width: 100%;
+}
+
+.search-tool .tool-wrap {
+    max-width: 192px;
+    margin-left: 24px;
+}
 
 
 
