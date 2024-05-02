@@ -127,6 +127,7 @@ header {
     color: rgb(164, 164, 166);
     font-size: 16px;
     text-align: center;
+    background-color: transparent;
     border: 0px;
     border-radius: 320px;
     align-items: center;
@@ -246,6 +247,16 @@ header {
 
 /* ~~헤더 스타일 지정 */
 
+
+
+
+
+
+
+
+
+
+
 /* 메인 스타일~~ */
 
 main {
@@ -312,9 +323,9 @@ main {
 .left-menu-toggle i {
     width: 24px;
     height: 24px;
+    color: rgb(0, 0, 42);
     line-height: 24px;
     text-align: center;
-    color: rgb(0, 0, 42);
 }
 
 .left-menu-shutter {
@@ -412,6 +423,7 @@ main {
 .center {
     display: block;
     position: relative;
+    width: 100%;
     min-width: 478px;
     margin-top: 32px;
 }
@@ -566,7 +578,7 @@ main {
 }
 
 .center-tab .seperator {
-    position: relative;
+    position: absolute;
     bottom: 1px;
     z-index: 0;
     width: 100%;
@@ -574,9 +586,365 @@ main {
     background-color: rgb(234, 234, 236);
 }
 
-.center-content {
+
+
+.center-contents {
     display: block;
 }
+
+
+.center-contents .contents-wrap {
+    width: 100%;
+    margin: 32px 0px;
+}
+
+.contents-wrap .content-box {
+
+}
+
+.content-box .content-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-header .info-wrap {
+    display: flex;
+    width: 100%;
+}
+
+.info-wrap .user-icon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 1px 9px 1px 1px;
+    background-color: black;
+    border: 10px solid rgb(238, 238, 255);
+    border-radius: 20px;
+}
+    
+.info-wrap .user-icon .fa-face-smile {
+    position: relative;
+    top: -12px;
+    left: -11px;
+    padding: 6px;
+    color: rgb(238, 238, 255);
+    font-size: 28px;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+
+.content-header .content-introduce {
+    display: flex;
+    margin-bottom: 12px;
+    padding-top: 2px;
+    color: rgb(112, 112, 112);
+    font-size: 14px;
+    line-height: 18.2px;
+    flex-direction: column;
+
+}
+
+.content-introduce .content-info {
+    display: flex;
+    line-height: 19.6px;
+}
+
+.content-info a {
+    margin-right: 2px;
+    color: black;
+    text-decoration: none;
+}
+
+.content-info .category {
+    color: rgb(27, 206, 107);
+}
+
+.content-introduce .user-info {
+    display: flex;
+    min-width: 0px;
+    margin-top: 2px;
+    color: rgb(142, 142, 142);
+    font-size: 12px;
+}
+
+.user-info .user-info-task {
+    color: rgb(0, 0, 0, 0.4);
+    text-decoration: none;
+}
+
+.user-info .user-info-association {
+    color: rgb(0, 0, 0, 0.4);
+    text-decoration: none;
+}
+
+.user-info .devider {
+    margin-right: 6px;
+    margin-left: 3px;
+}
+
+.content-header .deny-wrap {
+    width: fit-content;
+    height: fit-content;
+    margin-top: 2px;
+    border: 3px solid transparent;
+    border-radius: 9999px;
+    transition: 0.15s all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content-header .deny-wrap:hover {
+    border-color: rgb(209, 185, 255);
+}
+
+.deny-wrap .deny {
+    display: flex;
+    width: 19.25px !important;
+    height: 20px !important;
+    padding: 0;
+    box-sizing: content-box;
+    color: rgb(142, 142, 142);
+    font-size: 16px;
+    line-height: 24px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid transparent;
+    border-radius: 9999px;
+    transition: 0.15s all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    justify-content: center;
+    align-items: center;
+}
+
+.deny-wrap:hover .deny {
+    color: rgb(109, 85, 255);
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(109, 85, 255);
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
+}
+
+.deny-wrap-wrap {
+    display: flex;
+    width: 22px;
+    height: 21.25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.deny i {
+    width: 16px;
+    line-height: 24px;
+}
+
+.deny .fa-face-smile {
+    width: 8px;
+}
+
+
+.content-box .inner-content-wrap {
+    display: flex;
+    width: auto;
+    margin-bottom: 50px;
+    margin-left: 32px;
+    flex-direction: column;
+}
+
+.inner-content-wrap .inner-content {
+    display: flex;
+    position: relative;
+    width: 100%;
+    padding: 20px 20px 16px 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    transition: 0.1s all ease-out 0s;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.inner-content-wrap .inner-content:hover {
+    background-color: rgb(253, 253, 255);
+    box-shadow: rgba(0, 0, 0, 0.08) 6px 8px 16px 0px;
+    transform: matrix(1, 0, 0, 1, 0, -2);
+}
+
+.inner-content .card-gap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+.inner-content .content-main {
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    column-gap: 8px;
+}
+
+.content-main .content-head {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.content-head .title {
+    margin: 0;
+    line-height: 28.8px;
+}
+
+.content-main .content-body {
+    position: relative;
+    width: 100%;
+    height: 288px;
+    margin-bottom: 8px;
+    overflow-y: hidden;
+}
+
+.content-body .effect {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 88px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%,
+     rgba(255, 255, 255, 0.5) 50%, rgb(255, 255, 255) 100%);
+    opacity: 1;
+}
+
+.content-main .show-more {
+    width: 100%;
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 13px;
+    line-height: 19.5px;
+    text-align: right;
+    background-color: rgba(0, 0, 0, 0);
+    align-items: flex-start;
+}
+
+.inner-content .feed {
+    height: 42px;
+    margin-top: 10px;
+}
+
+.inner-content .content-attach {
+    display: flex;
+    width: calc(100% + 8px);
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px;
+}
+
+.content-attach>div {
+    border-radius: 8px;
+    background-color: rgba;
+}
+
+.content-attach .user-comment {
+    display: flex;
+    height: 28px;
+    max-height: 28px;
+    color: rgb(172, 172, 172);
+    font-size: 14px;
+    line-height: 14px;
+    outline: 2px solid rgba(0, 0, 0, 0) !important;
+    align-items: center;
+    flex-basis: 0%;
+    flex-grow: 0.5;
+    flex-shrink: 1;
+    justify-content: center;
+    outline-offset: 2px !important;
+}
+
+.user-comment i {
+    margin-right: 4px;
+}
+.user-comment .fa-message {
+    color: rgb(172, 172, 172);
+    font-size: 14px;
+}
+
+.content-attach .user-react {
+    display: flex;
+    position: relative;
+    height: 28px;
+    max-height: 28px;
+    color: rgb(172, 172, 172);
+    font-size: 14px;
+    line-height: 24px;
+    border-radius: 8px;
+    flex-basis: 0%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-react .fa-face-smile {
+    width: 22px;
+    height: 22px;
+    color: rgb(172, 172, 172);
+    font-size: 15.71px;
+    line-height: 24px;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-react .headcount {
+    font-size: 14px;
+    line-height: 16.8px;
+}
+
+.content-attach .user-upvote {
+    display: flex;
+    position: relative;
+    height: 28px;
+    max-height: 28px;
+    color: rgb(172, 172, 172);
+    font-size: 14px;
+    line-height: 24px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 8px;
+    outline: 2px solid rgba(0, 0, 0, 0) !important;
+    flex-basis: 0%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    justify-content: center;
+    align-items: center;
+    outline-offset: 2px !important;
+}
+
+.user-upvote .fa-circle-arrow-up {
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    font-size: 16px;
+}
+
+.content-attach .clicks {
+    display: flex;
+    position: relative;
+    height: 28px;
+    max-height: 28px;
+    color: rgb(172, 172, 172);
+    font-size: 14px;
+    line-height: 14px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 8px;
+    outline: 2px solid rgba(0, 0, 0, 0) !important;
+    flex-basis: 0%;
+    flex-grow: 0.75;
+    flex-shrink: 1;
+    justify-content: center;
+    align-items: center;
+    outline-offset: 2px !important;
+    gap: 4px;
+}
+
+.clicks .arrow-pointer {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+}
+
 
 .content-post {
     height: 400px;
@@ -679,6 +1047,10 @@ main {
         width: 100%;
         margin: 0;
         border-radius: 12px;
+    }
+
+    main {
+        display: flex;
     }
 
     .left {
