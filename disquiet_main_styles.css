@@ -1071,17 +1071,28 @@ main {
 
 /* ~~미디어 쿼리(중간) */
 
-
-
-/* 미디어 쿼리(모바일)~~ */
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 770px) {
     .site-logo a .site-logo-large {
         display: none;
     }
 
     .site-logo a .site-logo-small {
         display: block;
+    }
+
+    .center .deny-wrap-wrap {
+        display: none;
+    }
+    
+    .center .inner-content-wrap {
+        margin-left: 0;
+    }
+}
+/* 미디어 쿼리(모바일)~~ */
+
+@media only screen and (max-width: 640px) {
+    .center .center-post {
+        display: none;
     }
 }
 
