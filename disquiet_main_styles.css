@@ -26,6 +26,7 @@ header {
     background-color: rgba(255, 255, 255, 0.72);
     box-shadow: rgb(234, 234, 236) 0px 1px 0px 0px;
     border-image-width: 1px;
+    backdrop-filter: saturate(1.8) blur(20px) brightness(1);
 }
 
 .top {
@@ -835,7 +836,13 @@ main {
 
 .content-attach>div {
     border-radius: 8px;
-    background-color: rgba;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+}
+
+.content-attach .user-comment:hover {
+    background-color: rgba(143, 143, 143, 0.1);
 }
 
 .content-attach .user-comment {
@@ -860,6 +867,10 @@ main {
 .user-comment .fa-message {
     color: rgb(172, 172, 172);
     font-size: 14px;
+}
+
+.content-attach .user-react:hover {
+    background-color: rgba(229, 57, 127, 0.1);
 }
 
 .content-attach .user-react {
@@ -891,6 +902,10 @@ main {
 .user-react .headcount {
     font-size: 14px;
     line-height: 16.8px;
+}
+
+.content-attach .user-upvote:hover {
+    background-color: rgba(27, 206, 107, 0.1);
 }
 
 .content-attach .user-upvote {
