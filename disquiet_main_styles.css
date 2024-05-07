@@ -1277,18 +1277,141 @@ body {
     color: rgb(109, 85, 255);
     font-size: 12px;
     line-height: 12px;
+    text-align: center;
     text-decoration: none rgb(109, 85, 255);
     background-color: rgb(240, 238, 255);
     border: 1px solid rgba(109, 85, 255, 0);
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.1s ease-out 0s;
-    text-align: center;
 }
 
 .jm-main .show_more:hover {
     box-shadow: rgba(109, 85, 255, 0.4) 0px 0px 0px 3px;
 }
+
+
+
+.right-boxes-wrapper .box-trending_maker_log {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 92px;
+    margin-bottom: 24px;
+}
+
+.box-trending_maker_log .tm_log-header {
+    display: flex;
+    margin-bottom: 14px;
+    line-height: 16px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tm_log-header .title {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 13px;
+}
+
+.tm_log-header i {
+    color: rgb(142, 142, 142);
+    font-size: 14px;
+}
+
+.box-trending_maker_log .tm_log-main {
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 14px;
+}  
+
+.tm_log-main .maker_log {
+    display: flex;
+    width: 100%;
+    padding: 10px 8px;
+    text-decoration: none rgb(0, 0, 0);
+    border-radius: 12px;
+    transition: all 0.1s ease-out 0s;
+}
+
+.tm_log-main .maker_log:hover {
+    background-color: rgb(246, 246, 248);
+}
+
+.maker_log .rank {
+    margin-right: 5px;
+    padding-top: 2px;
+    color: rgb(142, 142, 142);
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.maker_log .m_log-content {
+    display: flex;
+    flex-direction: column;
+    min-width: 0px;
+    gap: 4px;
+}
+
+.m_log-content .user_info {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.m_log-content .user_info .user_icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin: 1px;
+    background-color: black;
+    border: 5px solid rgb(238, 238, 255);
+    border-radius: 20px;
+}
+
+.m_log-content .user_icon i {
+    position: relative;
+    top: -6px;
+    left: -6px;
+    padding: 2px;
+    color: rgb(238, 238, 255);
+    font-size: 16px;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.m_log-content .user_info .description {
+    display: flex;
+    color: black;
+    font-size: 13px;
+    line-height: 15.6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.description .maker_name {
+    margin-right: 2px;
+    font-weight: 500;
+}
+
+.description .tag {
+    margin-left: 2px;
+    font-weight: 500;
+}
+
+.m_log-content .text-content {
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 22.5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 
 
 /* ~~메인 스타일 */
