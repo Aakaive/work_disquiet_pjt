@@ -1082,6 +1082,214 @@ body {
 }
 
 
+.right-boxes-wrapper .box-trending_product {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.box-trending_product .tp-header {
+    display: flex;
+    position: relative;
+    margin-bottom: 14px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tp-header .title {
+    margin-right: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 13px;
+}
+
+.tp-header i {
+    width: 14px;
+    height: 14px;
+    color: rgb(142, 142, 142);
+    font-size: 14px;
+    line-height: 14px;
+    align-items: center;
+    justify-items: center;
+    vertical-align: middle;
+}
+
+.box-trending_product .tp-main {
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 14px;
+
+}
+
+.tp-main .goto-product {
+    display: flex;
+    width: 100%;
+    padding: 6px 8px 6px 8px;
+    border-radius: 12px;
+    transition: all 0.1s ease-out 0s;
+    align-items: center;
+}
+
+.tp-main .goto-product:hover {
+    background-color: rgb(246, 246, 248);
+}
+
+.goto-product .rank {
+    margin-right: 6px;
+    color: rgb(142, 142, 142);
+    font-size: 14px;
+}
+
+.goto-product .name {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 15.6px;
+
+}
+
+.goto-product .new-tag {
+    margin-left: 6px;
+    color: rgb(255, 92, 0);
+    font-size: 12px;
+}
+
+.right-boxes-wrapper .box-newest_join_maker {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    gap: 14px;
+}
+
+.box-newest_join_maker .jm-header {
+    display: flex;
+    font-size: 13px;
+    line-height: 13px;
+    gap: 4px;
+}
+
+.jm-header .icon {
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.jm-header .title {
+    font-size: 13px;
+}
+
+.box-newest_join_maker .jm-main {
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 14px;
+    gap: 4px;
+}
+
+.jm-main .goto-user_info {
+    display: flex;
+    padding: 8px;
+    border-radius: 12px;
+    border-radius: 12px;
+    justify-content: space-between;
+    gap: 8px;
+    transform: all 0.15s ease-in-out 0s;
+    text-decoration-color: rgb(0, 0, 0);
+    text-decoration-line: none;
+    align-items: center;
+}
+
+.jm-main .goto-user_info:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.goto-user_info .user_info-wrapper {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.user_info-wrapper .user_icon {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    margin: 1px;
+    background-color: black;
+    border: 10px solid rgb(238, 238, 255);
+    border-radius: 20px;
+}
+
+.user_info-wrapper .user_icon i {
+    position: relative;
+    top: -12px;
+    left: -11px;
+    padding: 6px;
+    color: rgb(238, 238, 255);
+    font-size: 20px;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.user_info-wrapper .user_profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+}
+
+.user_profile .user_name {
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+}
+
+.user_profile .user_role {
+    color: rgb(142, 142, 142);
+    font-size: 12px;
+    line-height: 15.6px;
+}
+
+.goto-user_info .clap {
+    display: flex;
+    min-width: 24px;
+    min-height: 24px;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    background-color: rgb(241, 238, 252);
+    border: 1px solid rgb(234, 234, 236);
+    border-radius: 32px;
+    transition: all 0.1s ease-out 0s;
+    align-items: center;
+    justify-content: center;
+}
+
+.goto-user_info .clap:hover {
+    border-color: rgb(109, 85, 255);
+    box-shadow: rgba(109, 85, 255, 0.4) 0px 0px 0px 3px;
+}
+
+.jm-main .show_more {
+    margin: 6px;
+    padding: 6px;
+    color: rgb(109, 85, 255);
+    font-size: 12px;
+    line-height: 12px;
+    text-decoration: none rgb(109, 85, 255);
+    background-color: rgb(240, 238, 255);
+    border: 1px solid rgba(109, 85, 255, 0);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.1s ease-out 0s;
+    text-align: center;
+}
+
+.jm-main .show_more:hover {
+    box-shadow: rgba(109, 85, 255, 0.4) 0px 0px 0px 3px;
+}
+
 
 /* ~~메인 스타일 */
 
