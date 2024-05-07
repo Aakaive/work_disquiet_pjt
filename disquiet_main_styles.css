@@ -18,6 +18,49 @@ body {
 
 /* 헤더 스타일 지정~ */
 
+.feedback_nav {
+    display: flex;
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    z-index: 99;
+    cursor: pointer;
+    align-items: center;
+}
+
+.feedback_nav a {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    width: 72px;
+    height: 72px;
+    background-image: url(floating_head.webp);
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0);
+    background-size: cover;
+    transition: all 0.25s ease-in-out 0s;
+}
+
+@keyframes glow {
+    0% {
+        background-image: url(floating_head.webp);
+    }
+    33% {
+        background-image: url(floating_head_ambient.webp);
+    }
+    66% {
+        background-image: url(floating_head_ambient.webp);
+    }
+    100% {
+        background-image: url(floating_head.webp);
+    }
+}
+
+.feedback_nav a:hover {
+    background-image: url(floating_head_ambient.webp);
+    transform: translateX(8px) translateY(-8px) scale(1.2) rotate(360deg);
+    animation: 2s ease-in-out 0s infinite normal none running glow;
+}
 
 .header {
     display: block;
