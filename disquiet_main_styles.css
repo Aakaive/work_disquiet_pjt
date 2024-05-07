@@ -7,6 +7,7 @@ body {
     font-weight: 400;
     line-height: 24px;
     background-color: rgb(245, 245, 247);
+    /* background-color: yellow; */
     overflow: visible;
     cursor: default;
     font-stretch: 100%;
@@ -17,7 +18,8 @@ body {
 
 /* 헤더 스타일 지정~ */
 
-header {
+
+.header {
     display: block;
     position: sticky;
     top: 0;
@@ -25,7 +27,16 @@ header {
     width: 100%;
     background-color: rgba(255, 255, 255, 0.72);
     box-shadow: rgb(234, 234, 236) 0px 1px 0px 0px;
-    border-image-width: 1px;
+}
+
+.header::before {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    content: "";
     backdrop-filter: saturate(1.8) blur(20px) brightness(1);
 }
 
@@ -52,8 +63,8 @@ header {
 
 .site-logo {
     display: flex;
-    align-items: center;
     flex-direction: row;
+    align-items: center;
 }
 
 .site-logo a {
@@ -120,8 +131,9 @@ header {
     min-width: 404.02px;
 }
 
-.quick-menu-toggle {
+.quick-menu .quick-menu-toggle {
     display: none;
+    flex-direction: column;
     width: 32px;
     height: 32px;
     margin-left: 4px;
@@ -132,84 +144,101 @@ header {
     border: 0px;
     border-radius: 320px;
     align-items: center;
-    flex-direction: column;
     justify-content: center;
 }
 
-
-
-.quick-menu-list {
+.quick-menu .quick-menu-list {
     display: flex;
     align-items: center;
 }
 
-.quick-menu-link {
+.quick-menu-list .quick-menu-link {
     display: flex;
+    flex-direction: row;
     margin-right: 8px;
     font-size: 13px;
     transition: all 0.1 ease-out 0s;
 }
 
-.quick-menu-link .label {
+.quick-menu-link>div {
+    margin-right: 0px;
     margin-left: 16px;
     padding: 16px 0px 15px 0px;
     color: rgb(112, 112, 112);
     line-height: 20.797px;
     text-decoration: none rgb(112, 112, 112) auto;
     border-bottom: 2px solid rgba(0, 0, 0, 0);
-    column-gap: 2px;
-    row-gap: 2px;
 }
 
-.quick-menu-link .label:hover {
+.quick-menu-link>div:hover {
     color: rgb(109, 85, 255);
     border-bottom-color: rgb(109, 85, 255);
     text-decoration-color: rgb(109, 85, 255);
 }
 
-.site-info {
-    cursor: default;
+.quick-menu-link .label {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    gap: 2px;
 }
 
-.quick-menu .site-info:hover .site-info-list {
+.quick-menu-link .label i {
+    display: none;
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 13px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.quick-menu-link .site-info {
+    display: flex; 
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
+
+.site-info:hover .site-info-list {
     display: flex;
 }
 
-.quick-menu .site-info .site-info-list {
+.site-info .site-info-list {
     display: none;
+    flex-direction: column;
     position: absolute;
-    top: calc(100%+2px);
+    top: calc(100% + 2px);
+    /* left: -32px; */
     width: fit-content;
     padding: 4px;
+    box-sizing: content-box;
     line-height: 20.8px;
     background-color: rgba(255, 255, 255, 0.72);
     border: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: 12px;
-    box-shadow: rgba(0, 0, 0, 0.04) 0px 0px 12px 0px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 0px 12px;
     transition: all 0.1s ease-out 0s;
     backdrop-filter: saturate(180%) blur(20px) brightness(1.1);
-    align-items: flex-start;
-    backdrop-filter: saturate(1.8) blur(20px) brigthness(1.1);
-    flex-direction: column;
+    white-space: nowrap;
 }
 
-.site-info-link:hover {
+.site-info-list .site-info-link:hover {
     background-color: rgba(0, 0, 0, 0.04);
 }
 
-.site-info-link {
+.site-info-list .site-info-link {
     display: flex;
-    width: 100%;
     padding: 6px 8px;
     color: rgb(142, 142, 142);
+    font-size: 13px;
     line-height: 15.6px;
     text-decoration: none rgb(142, 142, 142) auto;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.1s ease-out 0s;
-    align-items: center;
-    /* border-image-width: 1px; */
-    column-gap: 2px;
+    /* align-items: center; */
 }
 
 .quick-menu-seperator {
@@ -260,7 +289,7 @@ header {
 
 /* 메인 스타일~~ */
 
-main {
+.main {
     display: grid;
     position: relative;
     z-index: 0;
@@ -284,29 +313,29 @@ main {
 
 .left-menu {
     display: flex;
+    flex-direction: column;
     position: sticky;
     margin-top: 32px;
     margin-bottom: 24px;
     column-gap: 32px;
-    flex-direction: column;
     row-gap: 32px;
 }
 
 .left-menu-out {
     display: flex;
+    flex-direction: column;
     padding: 8px;
     background-color: rgb(255, 255, 255);
     border-radius: 16px;
     align-items: center;
-    flex-direction: column;
 }
 
 .left-menu-in {
     display: flex;
+    flex-direction: column;
     width: 100%;
     background-color: rgb(255, 255, 255);
     column-gap: 8px;
-    flex-direction: column;
     row-gap: 8px;
 }
 
@@ -333,8 +362,8 @@ main {
     position: relative;
     width: 100%;
     opacity: 1;
-    transform-origin: center top;
     transition: all 0.1s ease-out 0s;
+    transform-origin: center top;
 }
 
 .left-menu.show .left-menu-shutter {
@@ -343,15 +372,16 @@ main {
 
 .left-menu-list-cover {
     display: flex;
+    flex-direction: column;
     position: relative;
     width: 100%;
     margin-bottom: 8px;
     align-items: center;
-    flex-direction: column;
 }
 
 .left-menu-list {
     display: flex;
+    flex-direction: column;
     position: relative;
     left: 4px;
     width: calc(100% + 8px);
@@ -359,7 +389,6 @@ main {
     max-height: 400px;
     transition: all 0.1s ease-in-out 0s;
     column-gap: 2px;
-    flex-direction: column;
     overflow-x: auto;
     overflow-y: visible;
     row-gap: 2px;
@@ -431,9 +460,9 @@ main {
 
 .center-post {
     display: flex;
+    flex-direction: column;
     position: relative;
     margin-bottom: 24px;
-    flex-direction: column;
     gap: 6px;
 }
 
@@ -524,9 +553,9 @@ main {
 
 .center-tab {
     display: flex;
+    flex-direction: column;
     position: relative;
     width: 100%;
-    flex-direction: column;
 }
 
 .center-tab .tab-wrap {
@@ -637,12 +666,12 @@ main {
 
 .content-header .content-introduce {
     display: flex;
+    flex-direction: column;
     margin-bottom: 12px;
     padding-top: 2px;
     color: rgb(112, 112, 112);
     font-size: 14px;
     line-height: 18.2px;
-    flex-direction: column;
 
 }
 
@@ -743,21 +772,21 @@ main {
 
 .content-box .inner-content-wrap {
     display: flex;
+    flex-direction: column;
     width: auto;
     margin-bottom: 50px;
     margin-left: 32px;
-    flex-direction: column;
 }
 
 .inner-content-wrap .inner-content {
     display: flex;
+    flex-direction: column;
     position: relative;
     width: 100%;
     padding: 20px 20px 16px 20px;
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
     transition: all 0.1 ease-out 0s;
-    flex-direction: column;
     gap: 8px;
 }
 
@@ -777,8 +806,8 @@ main {
 
 .inner-content .content-main {
     display: flex;
-    cursor: pointer;
     flex-direction: column;
+    cursor: pointer;
     column-gap: 8px;
 }
 
@@ -976,17 +1005,17 @@ main {
 
 .right .right-boxes-wrapper {
     display: flex;
+    flex-direction: column;
     position: relative;
     height: 100%;
-    flex-direction: column;
     gap: 8px;
 }
 
 .right-boxes-wrapper .box-ad_banner {
     display: flex;
+    flex-direction: column;
     width: 100%;
     margin-bottom: 24px;
-    flex-direction: column;
 
 }
 
@@ -1039,12 +1068,12 @@ main {
 
 .banner-link .fa-arrow-right {
     position: relative;
+    left: 0%;
     width: 16px;
     height: 16px;
     font-size: 12px;
     line-height: 16px;
     text-align: center;
-    left: 0%;
     transition: all 0.1s ease-out 0s;
 }
 
@@ -1064,68 +1093,90 @@ main {
         min-width: min-content;
     }
 
-    .quick-menu-toggle {
+    .quick-menu .quick-menu-toggle {
         display: block;
     }
     
-    .quick-menu-list {
+    .quick-menu .quick-menu-list {
         display: none;
-    }
-
-    .quick-menu-list.show {
-        display: block;
+        flex-direction: column;
         position: absolute;
-        top: calc(100% + 5px);
+        top: 56px;
+        right: 11.2px;
         right: 11.2px;
         width: 224px;
         padding: 4px;
         background-color: white;
         border-radius: 16px;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px;
+        transition: all 0.1s ease-out 0s;
     }
 
-    .quick-menu-list.show .quick-menu-link {
+    .quick-menu .quick-menu-list.show {     
+        display: flex;
+    }
+
+    .quick-menu-list .quick-menu-link {
+        flex-direction: column;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .quick-menu-link .label i {
         display: block;
     }
 
-    .quick-menu-list.show .quick-menu-link .label {
-        height: auto;
+    .quick-menu-link>div {
         margin: 0;
         padding: 6px 8px 6px 8px;
         line-height: 24px;
         border-radius: 12px;
+        transition: all 0.1s ease-out 0s;
         border-bottom: none;
+        justify-content: flex-start;
     }
 
-    .quick-menu-list.show .quick-menu-link .label:hover {
+    .quick-menu-link>div:hover {
         text-decoration: none;
         background-color: rgb(246, 246, 248);
     }
 
-    .quick-menu-list.show .quick-menu-seperator {
+    .quick-menu-link>div:hover:not(.site-info) {
+        color: black;
+    }
+
+    .quick-menu-link .site-info:hover {
+        color: rgb(112, 112, 112);
+    }
+
+    .quick-menu-link .site-info {
+        flex-direction: row;
+    }
+
+    .quick-menu-list .quick-menu-seperator {
         width: calc(100% - 8px);
         height: 1px;
         margin: 4px 0px;
     }
 
-    .quick-menu-list.show .quick-menu-button {
+    .quick-menu-list .quick-menu-button {
         display: flex;
+        flex-direction: column;
         width: 100%;
         margin-top: 6px;
         margin-top: 6px;
         padding: 4px;
-        flex-direction: column;
         column-gap: 6px;
         row-gap: 6px;
     }
 
-    .quick-menu-list.show .quick-menu-button button {
+    .quick-menu-list .quick-menu-button button {
         width: 100%;
         margin: 0;
         border-radius: 12px;
     }
 
-    main {
+    .main {
         display: flex;
     }
 
