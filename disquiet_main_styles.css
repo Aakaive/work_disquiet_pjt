@@ -451,7 +451,17 @@ body {
     color: rgb(0, 0, 42);
     line-height: 24px;
     text-align: center;
+    transform: rotate(90deg);
 }
+
+.left-menu-toggle.hide i {
+    animation: 0.2s ease rotate2 both;
+}
+
+.left-menu-toggle.show i {
+    animation: 0.2s ease rotate both;
+}
+
 
 .left-menu-shutter {
     display: flex;
@@ -1574,7 +1584,6 @@ body {
     position: relative;
     width: 20px;
     height: 20px;
-    margin: 1px;
     background-color: black;
     border: 5px solid rgb(238, 238, 255);
     border-radius: 20px;
@@ -1640,6 +1649,7 @@ body {
     padding: 4px;
     background-color: rgb(255, 255, 255);
     border-radius: 16px;
+    align-items: center;
 }
 
 .cmu-main a:hover {
@@ -1764,6 +1774,7 @@ body {
     transition: all 0.1s ease-out;
     align-items: center;
     gap: 4px;
+    vertical-align: middle;
 }
 
 .app-main>div svg {
@@ -1786,8 +1797,10 @@ body {
 }
 
 .ios-app .description a {
+    display: flex;
     position: relative;
     text-decoration: none rgb(142, 142, 142);
+    align-items: center;
 }
 
 .ios-app .description a:hover .speech-bubble {
@@ -1812,6 +1825,97 @@ body {
     white-space: nowrap;
 }
 
+/* 
+.right-boxes-wrapper .box-tail {
+    
+} */
+
+.box-tail .quick-goto {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.quick-goto .goto-link:hover {
+    color: rgb(109, 85, 255);
+}
+
+.quick-goto .goto-link {
+    margin: 2px;
+    color: rgb(142, 142, 142);
+    font-size: 12px;
+    line-height: 16.8px;
+    text-decoration: none rgb(142, 142, 142);
+    transition: all 0.1s ease-in;
+}
+
+.quick-goto .seperator-dot {
+    margin: 0 2px;
+    color: rgb(142, 142, 142);
+    font-size: 8px;
+    line-height: 8px;
+}
+
+.box-tail .seperator-line {
+    width: 100%;
+    height: 1px;
+    margin: 8px 0;
+    background-color: rgb(234, 234, 236);
+}
+
+.box-tail .info-license {
+    display: flex;
+    flex-direction: column;
+    margin-left: -4px;
+    font: 12px;
+    line-height: 18px;
+    gap: 4px;
+}
+
+.info-license .info-license-header {
+    display: flex;
+    color: rgb(142, 142, 142);
+    font-size: 12px;
+    line-height: 13.2px;
+    cursor: pointer;
+    align-items: center;
+}
+
+.info-license-header i {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.info-license-header.hide i {
+    animation: 0.2s ease rotate2 both;
+}
+
+.info-license-header.show i {
+    animation: 0.2s ease rotate both;
+}
+
+.info-license .info-license-main {
+    padding-left: 15px;
+    color: rgb(142, 142, 142);
+    font-size: 12px;
+    line-height: 19.2px;
+    opacity: 0;
+    margin-inline: 8px 4px;
+    margin-block: 2px;
+}
+
+.info-license .info-license-main .copyright {
+    margin-top: 8px;
+}
+
+.info-license .info-license-main.show {
+    opacity: 1;
+    transition: all 0.3s ease-in;
+}
 
 
 
@@ -1976,4 +2080,21 @@ button {
     cursor: pointer;
     transition: all 0.1s ease-out 0s;
     align-items: flex-start;
+}
+
+@keyframes rotate2 {
+    from {
+        transform: rotate(90deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(90deg);
+    }
 }
