@@ -44,6 +44,8 @@ body {
 .feedback_nav .speech-bubble {
     display: none;
 	position: relative;
+    bottom: 4px;
+    left: 12px;
     z-index: 0;
     padding: 8px 12px;
     color: rgb(255, 255, 255);
@@ -55,8 +57,6 @@ body {
     opacity: 0;
     transition: opacity 0.1s ease-out 0s;
     backdrop-filter: blur(20px);
-    left: 12px;
-    bottom: 4px;
 }
 
 .feedback_nav .speech-bubble:after {
@@ -966,12 +966,48 @@ body {
     cursor: pointer;
 }
 
+.content-attach>div i:hover + .speech-bubble {
+    opacity: 1;
+}
+
+
+.content-attach>div .speech-bubble {
+	position: absolute;
+    top: 34px;
+    z-index: 0;
+    padding: 8px 12px;
+    color: rgb(255, 255, 255);
+    font-size: 11px;
+    line-height: 1em;
+	background: rgba(0, 0, 0, 0.7);
+	border-radius: 0.4em;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 20px;
+    opacity: 0;
+    backdrop-filter: blur(20px);
+    white-space: nowrap;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.content-attach>div .speech-bubble:after {
+	position: absolute;
+	top: 0;
+    left: 50%;
+	width: 0;
+	height: 0;
+	margin-top: -6px;
+	margin-left: -6px;
+	border: 6px solid transparent;
+	content: '';
+	border-bottom-color: rgba(0, 0, 0, 0.7);
+	border-top: 0;
+}
 .content-attach .user-comment:hover {
     background-color: rgba(143, 143, 143, 0.1);
 }
 
 .content-attach .user-comment {
     display: flex;
+    position: relative;
     height: 28px;
     max-height: 28px;
     color: rgb(172, 172, 172);
@@ -1210,6 +1246,43 @@ body {
     vertical-align: middle;
 }
 
+.tp-header i:hover + .speech-bubble {
+    display: block;
+}
+
+
+.tp-header .speech-bubble {
+    display: none;
+	position: absolute;
+    top: 22px;
+    right: -6.5px;
+    z-index: 0;
+    padding: 8px 12px;
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    line-height: 1em;
+	background: rgba(0, 0, 0, 0.7);
+	border-radius: 0.4em;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 20px;
+    /* opacity: 1; */
+    transition: all 0.1s ease-out 0s;
+    backdrop-filter: blur(20px);
+}
+
+.tp-header .speech-bubble:after {
+	position: absolute;
+	top: 0;
+    right: 8px;
+	width: 0;
+	height: 0;
+	margin-top: -6px;
+	margin-left: -6px;
+	border: 6px solid transparent;
+	content: '';
+	border-bottom-color: rgba(0, 0, 0, 0.7);
+	border-top: 0;
+}
+
 .box-trending_product .tp-main {
     display: flex;
     flex-direction: column;
@@ -1413,6 +1486,43 @@ body {
 .tm_log-header i {
     color: rgb(142, 142, 142);
     font-size: 14px;
+}
+
+.tm_log-header i:hover + .speech-bubble {
+    display: block;
+}
+
+
+.tm_log-header .speech-bubble {
+    display: none;
+	position: absolute;
+    top: 22px;
+    right: -6.5px;
+    z-index: 0;
+    padding: 8px 12px;
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    line-height: 1em;
+	background: rgba(0, 0, 0, 0.7);
+	border-radius: 0.4em;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 20px;
+    /* opacity: 1; */
+    transition: all 0.1s ease-out 0s;
+    backdrop-filter: blur(20px);
+}
+
+.tm_log-header .speech-bubble:after {
+	position: absolute;
+	top: 0;
+    right: 8px;
+	width: 0;
+	height: 0;
+	margin-top: -6px;
+	margin-left: -6px;
+	border: 6px solid transparent;
+	content: '';
+	border-bottom-color: rgba(0, 0, 0, 0.7);
+	border-top: 0;
 }
 
 .box-trending_maker_log .tm_log-main {
