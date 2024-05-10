@@ -53,26 +53,35 @@
                     licenseInfoToggle.classList.remove('hide');
                 }
             });
-        });
-        // 반복할 횟수
-        var repeatCount = 8;
 
-        // 반복하여 컨텐츠를 추가하는 함수
-        function repeatContent() {
-            // 부모 요소를 찾음
-            var container = document.getElementById('contents-wrap');
-            // 원본 컨텐츠 요소를 찾음
-            var originalContent = document.getElementById('content-box');
+            var repeatCount = 8;
+            // 반복하여 컨텐츠를 추가하는 함수
+            function repeatContent() {
+                // 부모 요소를 찾음
+                var container = document.getElementById('contents-wrap');
+                // 원본 컨텐츠 요소를 찾음
+                var originalContent = document.getElementById('content-box');
 
-            // 반복 횟수만큼 반복
-            for (var i = 0; i < repeatCount; i++) {
-                // 원본 컨텐츠 요소를 복제
-                var clonedContent = originalContent.cloneNode(true);
-                // 복제한 컨텐츠를 문서에 추가
-                container.appendChild(clonedContent);
+                // 반복 횟수만큼 반복
+                for (var i = 0; i < repeatCount; i++) {
+                    // 원본 컨텐츠 요소를 복제
+                    var clonedContent = originalContent.cloneNode(true);
+                    // 복제한 컨텐츠를 문서에 추가
+                    container.appendChild(clonedContent);
+                }
             }
-        }
-        window.onload = repeatContent;
+            repeatContent();
+
+            function copyContent() {
+                var container = document.getElementById('center');
+                var originalContent = document.getElementById('box-trending_product');
+                var targetContent = document.getElementById('center-post');
+
+                var clonedContent = originalContent.cloneNode(true);
+                container.insertBefore(clonedContent, targetContent.nextSibling);
+            }
+            copyContent();
+        });
     </script>
 </head>
 
@@ -233,8 +242,8 @@
                 </div>
             </div>
         </section>
-        <section class="center"> <!--메인 중앙 컨텐츠-->
-            <div class="center-post">
+        <section id="center" class="center"> <!--메인 중앙 컨텐츠-->
+            <div id="center-post" class="center-post">
                 <div class="post-wrap">
                     <div class="user-icon">
                         <i class="fa-solid fa-face-smile"></i>
@@ -370,41 +379,43 @@
                         </a>
                     </div>
                 </div>
-                <div class="box-trending_product">
+                <div id="box-trending_product" class="box-trending_product">
                     <div class="tp-header">
                         <div class="title">🔥 트렌딩 프로덕트</div>
                         <i class="fa-solid fa-circle-info"></i>
                         <div class="speech-bubble">최근 참여도(Upvote, 댓글, 댓글 좋아요)가<br>높은 순으로 노출됩니다.</div>
                     </div>
                     <div class="tp-main">
-                        <div class="goto-product">
-                            <div class="rank">1</div>
-                            <div></div>
-                            <div class="name">유아이볼</div>
-                            <div class="new-tag">새로 나온</div>
-                        </div>
-                        <div class="goto-product">
-                            <div class="rank">2</div>
-                            <div></div>
-                            <div class="name">phase</div>
-                        </div>
-                        <div class="goto-product">
-                            <div class="rank">3</div>
-                            <div></div>
-                            <div class="name">COFEE DB</div>
-                            <div class="new-tag">새로 나온</div>
-                        </div>
-                        <div class="goto-product">
-                            <div class="rank">4</div>
-                            <div></div>
-                            <div class="name">Desktop Dday</div>
-                            <div class="new-tag">새로 나온</div>
-                        </div>
-                        <div class="goto-product">
-                            <div class="rank">5</div>
-                            <div></div>
-                            <div class="name">LookOver</div>
-                            <div class="new-tag">새로 나온</div>
+                        <div class="product-slide">
+                            <div class="goto-product">
+                                <div class="rank">1</div>
+                                <div></div>
+                                <div class="name">유아이볼</div>
+                                <div class="new-tag">새로 나온</div>
+                            </div>
+                            <div class="goto-product">
+                                <div class="rank">2</div>
+                                <div></div>
+                                <div class="name">phase</div>
+                            </div>
+                            <div class="goto-product">
+                                <div class="rank">3</div>
+                                <div></div>
+                                <div class="name">COFEE DB</div>
+                                <div class="new-tag">새로 나온</div>
+                            </div>
+                            <div class="goto-product">
+                                <div class="rank">4</div>
+                                <div></div>
+                                <div class="name">Desktop Dday</div>
+                                <div class="new-tag">새로 나온</div>
+                            </div>
+                            <div class="goto-product">
+                                <div class="rank">5</div>
+                                <div></div>
+                                <div class="name">LookOver</div>
+                                <div class="new-tag">새로 나온</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -602,6 +613,9 @@
             </div>
         </section>
     </div>
+    <script>
+        
+    </script>
 </body>
 
 </html>
