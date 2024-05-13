@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -81,6 +81,60 @@
                 container.insertBefore(clonedContent, targetContent.nextSibling);
             }
             copyContent();
+
+            var searchBar = document.getElementById('search-bar');
+            var searchWrap = document.getElementById('tool-wrap');
+            var quickMenu = document.getElementById('quick-menu-link');
+            var textInput = document.getElementById('search-type');
+            var extendBox = document.getElementById('extend-tool-wrap');
+
+            textInput.addEventListener('click', function () {
+                searchBar.classList.add('extend');
+                searchWrap.classList.add('extend');
+                extendBox.classList.add('extend');
+                quickMenu.classList.add('hide');   
+            });
+
+            textInput.addEventListener('focus', function() {
+                this.removeAttribute('placeholder');
+            });
+
+            textInput.addEventListener('blur', function() {
+                this.setAttribute('placeholder', '디스콰이엇 검색하기');
+            });
+            
+            var targetElement = textInput;
+
+            document.addEventListener('click', function(event) {
+                if (!targetElement.contains(event.target)) {
+                    searchBar.classList.remove('extend');
+                    searchWrap.classList.remove('extend');
+                    extendBox.classList.remove('extend');
+                    quickMenu.classList.remove('hide');
+                }
+            });
+
+
+            var etdHolder = document.getElementById('extend-search-holder');
+            var etdIcon = document.getElementById('extend-searching-icon');
+
+            textInput.addEventListener('input', function() {
+                if(this.value.trim() !== ''){
+                    if(!etdHolder.classList.contains('searching')){
+                        etdHolder.classList.add('searching');
+                    }
+                    if(!etdIcon.classList.contains('searching')){
+                        etdIcon.classList.add('searching');
+                    }
+                } else {
+                    if(etdHolder.classList.contains('searching')){
+                        etdHolder.classList.remove('searching');
+                    }
+                    if(etdIcon.classList.contains('searching')){
+                        etdIcon.classList.remove('searching');
+                    }
+                }
+            });
         });
     </script>
 </head>
@@ -101,10 +155,14 @@
                     </a>
                 </div>
                 <div class="search-tool">
-                    <div class="tool-wrap">
-                        <div class="search-bar">
+                    <div id="tool-wrap" class="tool-wrap">
+                        <div id="search-bar" class="search-bar">
                             <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" placeholder="디스콰이엇 검색하기">
+                            <input id="search-type" type="text" placeholder="디스콰이엇 검색하기">
+                        </div>
+                        <div id="extend-tool-wrap" class="extend-tool-wrap">
+                            <div id="extend-search-holder" class="text-holder">메이커나 프로덕트, 메이커로그를 검색해보세요 🔍</div>
+                            <div id="extend-searching-icon" class="searching-icon"><i class="fa-solid fa-star-of-life"></i></div>
                         </div>
                     </div>
                 </div>
@@ -114,7 +172,7 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 <div id="quick-menu-list" class="quick-menu-list">
-                    <div class="quick-menu-link">
+                    <div id="quick-menu-link" class="quick-menu-link">
                         <div class="site-info">
                             <div class="label"><i class="fa-solid fa-circle-info"></i>사이트 소개</div>
                             <div class="site-info-list">
@@ -619,9 +677,6 @@
             </div>
         </section>
     </div>
-    <script>
-        
-    </script>
 </body>
 
 </html>
