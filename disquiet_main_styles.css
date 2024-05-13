@@ -295,6 +295,10 @@ body {
     animation: infiniteSpin 2s ease-in-out 1s infinite;
 }
 
+.tool-wrap .extend-tool-wrap .searching-icon i:first-child {
+    animation-delay: -1s;
+}
+
 .tool-wrap .extend-tool-wrap .searching-icon.searching {
     display: block;
 }
@@ -932,6 +936,19 @@ body {
     border: 10px solid rgb(238, 238, 255);
     border-radius: 20px;
 }
+
+.info-wrap .user-icon.prime {
+    border: 0px;
+    overflow: hidden;
+}
+
+.info-wrap .user-icon img {
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    overflow-x: clip;
+    overflow-y: clip;
+}
     
 .info-wrap .user-icon .fa-face-smile {
     position: relative;
@@ -1048,6 +1065,11 @@ body {
 
 .deny .fa-face-smile {
     width: 8px;
+}
+
+
+.content-box[data-index=""] {
+    display: none !important;
 }
 
 
