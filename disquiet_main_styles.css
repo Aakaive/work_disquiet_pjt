@@ -292,7 +292,7 @@ body {
 }
 
 .tool-wrap .extend-tool-wrap .searching-icon i {
-    animation: infiniteSpin 1.5s ease-in-out 1s infinite;
+    animation: infiniteSpin 2s ease-in-out 1s infinite;
 }
 
 .tool-wrap .extend-tool-wrap .searching-icon.searching {
