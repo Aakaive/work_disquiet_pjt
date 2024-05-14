@@ -863,10 +863,14 @@ body {
     border-bottom: 2px solid rgba(0, 0, 0, 0);
 }
 
-.center-tab .tab-wrap .category label:hover {
+.center-tab .tab-wrap .category label.select {
     z-index: 1;
     color: rgb(109, 85, 255);
     border-bottom-color: rgb(109, 85, 255);
+}
+
+.center-tab .tab-wrap .category label:hover {
+    color: rgb(109, 85, 255);
 }
 
 .center-tab .tab-wrap .sort {

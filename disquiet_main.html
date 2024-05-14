@@ -128,6 +128,54 @@
                     }
                 }
             });
+
+
+            // 여기에 필터 추가
+            var categoriesContainer = document.querySelector(".center-tab .category");
+            var categories = categoriesContainer.querySelectorAll("label");
+            var selectedCategory = document.getElementById('category-all');
+            var targetCategory = document.getElementById('categoryy-all');
+            var contentBoxContainer = document.querySelector('.contents-wrap');
+
+            selectedCategory.classList.add('select');
+
+            function selectCategory(category) {
+                selectedCategory = category;
+                selectedCategory.classList.add('select');
+            }
+
+            function removeSelector(category) {
+                targetCategory = category;
+                targetCategory.classList.remove('select');
+            }
+
+            function filterContents() {
+                let contentBox = contentBoxContainer.querySelectorAll('.content-box');
+                if(selectedCategory.dataset.category === 'all') {
+                    for(var i=0; i<contentBox.length; i++){
+                        contentBox[i].style.display = 'block';
+                    }
+                } else {
+                    for(var i=0; i<contentBox.length; i++){
+                        if(selectedCategory.dataset.category === contentBox[i].dataset.category) {
+                            contentBox[i].style.display = 'block';
+                        }
+                        else {
+                            contentBox[i].style.display = 'none';
+                        }
+                    }
+                }
+            }
+
+            categories.forEach(function(label) {
+                label.addEventListener('click', function() {
+                    if(this.dataset.category !== selectedCategory.dataset.category) {
+                        removeSelector(selectedCategory);
+                        selectCategory(this);
+                        filterContents();
+                    }
+                });
+            });
         });
     </script>
 </head>
@@ -312,10 +360,10 @@
             <div class="center-tab">
                 <div class="tab-wrap">
                     <div class="category">
-                        <label id="category-all">전체</label>
-                        <label id="category-product">프로덕트</label>
-                        <label id="category-maker_log">메이커로그</label>
-                        <label id="categoty-club">클럽</label>
+                        <label data-category="all" id="category-all">전체</label>
+                        <label data-category="product" id="category-product">프로덕트</label>
+                        <label data-category="maker_log" id="category-maker_log">메이커로그</label>
+                        <label data-category="club" id="categoty-club">클럽</label>
                     </div>
                     <div class="sort">
                         <button id="recommend">
@@ -329,89 +377,7 @@
                 <div class="seperator"></div>
             </div>
             <div class="center-contents">
-                <!-- <div id="contents-wrap" class="contents-wrap">
-                    <div id="content-box" class="content-box">
-                        <div class="content-header">
-                            <div class="info-wrap">
-                                <div class="user-icon">
-                                    <i class="fa-solid fa-face-smile"></i>
-                                </div>
-                                <div class="content-introduce">
-                                    <div class="content-info">
-                                        <a class="user-name" href="#">이름</a>
-                                        님의&nbsp;
-                                        <div class="category">
-                                            메이커로그
-                                        </div>
-                                    </div>
-                                    <div class="user-info">
-                                        <a class="user-info-task" href="#">Front-end Designer</a>
-                                        @
-                                        <a class="user-info-association" href="#">디스콰이엇*</a>
-                                        <div class="devider">•</div>
-                                        <div class="post-time">약 2시간 전</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="deny-wrap-wrap">
-                                <div class="deny-wrap">
-                                    <button class="deny">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="inner-content-wrap">
-                            <div class="inner-content">
-                                <div class="card-gap"></div>
-                                <div class="content-main">
-                                    <div class="content-head">
-                                        <h1 class="title">메이커로그 제목!</h1>
-                                    </div>
-                                    <div class="content-body">
-                                        <p>본문 내용</p>
-                                        <hr>
-                                        <p>
-                                            딱히 쓸 내용은 없는데 컨텐츠 채우려면 어쩔 수 없이 넣어야 해서 넣었습니다.<br><br>
-                                            적어도 최소 높이는 있어야 결과물 보기에 좋을거 같아서 그냥 아무 내용이나 넣고 있는데, 솔직히 딱히 쓸 건 없네요.<br><br>
-                                            그냥 아무 말이나 막 쓰고 있는데 이거 고민하는 것도 이상한거 같아서 진짜로 생각나는대로 곧바로 타이핑하고 있습니다.<br><br>
-                                            이정도 길이면 충분하지 않을까 싶기도한데, 일단은 모르는 거니까 조금만 더 길게 이어 써 보았습니다.<br><br>
-                                            이정도면 되지 않을까요?<br><br>
-                                            그럼 글 마치겠습니다.<br><br>
-                                        </p>
-                                        <div class="effect"></div>
-                                    </div>
-                                    <div class="show-more">...</div>
-                                </div>
-                                <div class="content-attach">
-                                    <div class="user-comment">
-                                        <i class="fa-solid fa-message"></i>
-                                        <div class="speech-bubble">댓글 작성하기</div>
-                                        <div class="headcount">3</div>
-                                    </div>
-                                    <div class="user-react">
-                                        <i class="fa-solid fa-face-smile"></i>
-                                        <div class="speech-bubble">리액트</div>
-                                        <div class="headcount">2</div>
-                                    </div>
-                                    <div class="user-upvote">
-                                        <i class="fa-solid fa-circle-arrow-up"></i>
-                                        <div class="speech-bubble">업보트</div>
-                                        <div class="headcount">1</div>
-                                    </div>
-                                    <div class="clicks">
-                                        <i class="fa-solid fa-arrow-pointer"></i>
-                                        <div class="speech-bubble">조회수</div>
-                                        <div class="headcount">9</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-
-                <div data-contents-id="contents-wrap2" class="contents-wrap">
+                <div data-contents-id="contents-wrap" class="contents-wrap">
                     <div data-index="0" data-topic="social" data-category="maker_log" data-tag="#소통" class="content-box">
                         <div class="content-header">
                             <div class="info-wrap">
