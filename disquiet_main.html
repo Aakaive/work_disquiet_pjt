@@ -134,32 +134,78 @@
             var selectedCategory = document.getElementById('category-all');
             var targetCategory = document.getElementById('categoryy-all');
             var contentBoxContainer = document.querySelector('.contents-wrap');
+            var selectedTopic = document.querySelector(".left-menu-list .topic:is([data-topic='all'])");
+            var targetTopic = document.querySelector(".left-menu-list .topic:is([data-topic='all'])");
+            var topics = document.querySelectorAll('.left-menu-list .topic');
 
             selectedCategory.classList.add('select');
+            selectedTopic.classList.add('select');
 
             function selectCategory(category) {
                 selectedCategory = category;
                 selectedCategory.classList.add('select');
             }
 
-            function removeSelector(category) {
+            function selectTopic(topic) {
+                selectedTopic = topic;
+                selectedTopic.classList.add('select');
+            }
+
+            function removeCategorySelector(category) {
                 targetCategory = category;
                 targetCategory.classList.remove('select');
             }
 
+            function removeTopicSelector(topic) {
+                targetTopic = topic;
+                targetTopic.classList.remove('select');
+            }
+
+            function compareTopic(topic) {
+                let bool = 0;
+                let dataTopic = topic.getAttribute('data-topic');
+                let topicArray = JSON.parse(dataTopic);
+                console.log(topicArray);
+                for(var i=0; i<topicArray.length; i++) {
+                    if(topicArray[i] === selectedTopic.dataset.topic){
+                        bool = 1;
+                    };
+                }
+                return bool;
+            }
+
             function filterContents() {
-                let contentBox = contentBoxContainer.querySelectorAll('.content-box');
+                var contentBox = contentBoxContainer.querySelectorAll('.content-box');
                 if(selectedCategory.dataset.category === 'all') {
-                    for(var i=0; i<contentBox.length; i++){
-                        contentBox[i].style.display = 'block';
-                    }
-                } else {
-                    for(var i=0; i<contentBox.length; i++){
-                        if(selectedCategory.dataset.category === contentBox[i].dataset.category) {
+                    if(selectedTopic.dataset.topic === 'all') {
+                        for(var i=0; i<contentBox.length; i++) {
                             contentBox[i].style.display = 'block';
                         }
-                        else {
-                            contentBox[i].style.display = 'none';
+                    } else {
+                        for(var i=0; i<contentBox.length; i++) {
+                            if(compareTopic(contentBox[i])) {
+                                contentBox[i].style.display = 'block';
+                            } else {
+                                contentBox[i].style.display = 'none';
+                            }
+                        }
+                    }
+                } else {
+                    if(selectedTopic.dataset.topic == 'all') {
+                        for(var i=0; i<contentBox.length; i++){
+                            if(contentBox[i].dataset.category === selectedCategory.dataset.category) {
+                                contentBox[i].style.display = 'block';
+                            } else {
+                                contentBox[i].style.display = 'none';
+                            }
+                        }
+                    } else {
+                        for(var i=0; i<contentBox.length; i++) {
+                            if(contentBox[i].dataset.category === selectedCategory.dataset.category && compareTopic(contentBox[i])) {
+                                contentBox[i].style.display = 'block';
+                            } else {
+                                contentBox[i].style.display = 'none';
+                            }
                         }
                     }
                 }
@@ -168,8 +214,18 @@
             categories.forEach(function(label) {
                 label.addEventListener('click', function() {
                     if(this.dataset.category !== selectedCategory.dataset.category) {
-                        removeSelector(selectedCategory);
+                        removeCategorySelector(selectedCategory);
                         selectCategory(this);
+                        filterContents();
+                    }
+                });
+            });
+
+            topics.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    if(this.dataset.topic !== selectedTopic.dataset.topic) {
+                        removeTopicSelector(selectedTopic);
+                        selectTopic(this);
                         filterContents();
                     }
                 });
@@ -251,83 +307,83 @@
                         <div class="left-menu-shutter">
                             <div class="left-menu-list-cover">
                                 <div class="left-menu-list">
-                                    <button class="topic">
+                                    <button data-topic="all" class="topic">
                                         <span>🌕</span>
                                         전체
                                     </button>
-                                    <button class="topic">
+                                    <button data-topic="platform" class="topic">
                                         <span>📡</span>
                                         플랫폼
                                     </button>
-                                    <button class="topic">
+                                    <button data-topic="lifestyle" class="topic">
                                         <span>📷</span>
                                         라이프스타일
                                     </button>
-                                    <button class="topic">
+                                    <button data-topic="financial" class="topic">
                                         <span>💰</span>
                                         금융
                                     </button>
-                                    <button class="topic">
+                                    <button data-topic="social" class="topic">
                                         <span>👫</span>
                                         소셜
                                     </button>
-                                    <button class="topic">
+                                    <button data-topic="media" class="topic">
                                         <span>🎙</span>
                                         미디어
                                     </button>
-                                    <button class="topic">
+                                    <button data-topic="education" class="topic">
                                         <span>✏️</span>
                                         교육
                                     </button>
-                                    <button class="topic">
+                                    <button data-topic="productivity" class="topic">
                                         <span>🚲</span>
                                         생산성
                                     </button>
-                                    <button class="topic">
+                                    <button data-topic="blockchain" class="topic">
                                         <span>🔗</span>
                                         블록체인
                                     </button>
-                                    <button class="topic">
+                                    <button data-topic="nocode" class="topic">
                                         <span>💻</span>
                                         노코드
                                     </button>
-                                    <button class="topic">
+                                    <button data-topic="ai" class="topic">
                                         <span>🤖</span>
                                         인공지능
                                     </button>
-                                    <button class="topic">
+                                    <button cdata-topic="community" class="topic">
                                         <span>🏘</span>
                                         커뮤니티
                                     </button>
-                                    <button class="topic">
+                                    <button data-topic="analyze" class="topic">
                                         <span>📊</span>
                                         분석
                                     </button>
-                                    <button class="topic">
+                                    <button data-topic="design" class="topic">
                                         <span>🎨</span>
                                         디자인
                                     </button>
-                                    <button class="topic">
+                                    <button data-topic="development" class="topic">
                                         <span>🧑‍💻</span>
                                         개발
                                     </button>
-                                    <button class="topic">
+                                    <button data-topic="marketing" class="topic">
                                         <span>🔮</span>
                                         마케팅
                                     </button>
-                                    <button class="topic">
+                                    <button cdata-topic="game" lass="topic">
                                         <span>🎮</span>
                                         게임
                                     </button>
-                                    <button class="topic">
+                                    <button data-topic="e-commerce" class="topic">
                                         <span>💳</span>
                                         이커머스
                                     </button>
-                                    <button class="topic">
+                                    <button data-topic="healthcare" class="topic">
                                         <span>🏃</span>
                                         헬스케어
                                     </button>
-                                    <button class="topic">
+                                    <button data-topic="bio" class="topic">
                                         <span>🧬</span>
                                         바이오
                                     </button>
@@ -376,7 +432,7 @@
             </div>
             <div class="center-contents">
                 <div data-contents-id="contents-wrap" class="contents-wrap">
-                    <div data-index="0" data-topic="social" data-category="maker_log" data-tag="#소통" class="content-box">
+                    <div data-index="0" data-topic='["social"]' data-category="maker_log" data-tag="#소통" class="content-box">
                         <div class="content-header">
                             <div class="info-wrap">
                                 <div class="user-icon prime"> 
@@ -474,7 +530,7 @@
                     </div>
 
 
-                    <div data-index="1" data-topic="media" data-category="product" data-tag="none" class="content-box">
+                    <div data-index="1" data-topic='["media", "lifestyle", "platform"]' data-category="product" data-tag="none" class="content-box">
                         <div class="content-header">
                             <div class="info-wrap">
                                 <div class="user-icon prime"> 
@@ -562,168 +618,7 @@
                         </div>
                     </div>
 
-
-
-
-                    <div data-index="2" class="content-box">
-                        <div class="content-header">
-                            <div class="info-wrap">
-                                <div class="user-icon">
-                                    <i class="fa-solid fa-face-smile"></i>
-                                </div>
-                                <div class="content-introduce">
-                                    <div class="content-info">
-                                        <a class="user-name" href="#">이름0</a>
-                                        님의&nbsp;
-                                        <div class="category">
-                                            메이커로그
-                                        </div>
-                                    </div>
-                                    <div class="user-info">
-                                        <a class="user-info-task" href="#">Front-end Designer</a>
-                                        @
-                                        <a class="user-info-association" href="#">디스콰이엇*</a>
-                                        <div class="devider">•</div>
-                                        <div class="post-time">약 2시간 전</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="deny-wrap-wrap">
-                                <div class="deny-wrap">
-                                    <button class="deny">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="inner-content-wrap">
-                            <div class="inner-content">
-                                <div class="card-gap"></div>
-                                <div class="content-main">
-                                    <div class="content-head">
-                                        <h1 class="title">메이커로그 제목!</h1>
-                                    </div>
-                                    <div class="content-body">
-                                        <p>본문 내용</p>
-                                        <hr>
-                                        <p>
-                                            딱히 쓸 내용은 없는데 컨텐츠 채우려면 어쩔 수 없이 넣어야 해서 넣었습니다.<br><br>
-                                            적어도 최소 높이는 있어야 결과물 보기에 좋을거 같아서 그냥 아무 내용이나 넣고 있는데, 솔직히 딱히 쓸 건 없네요.<br><br>
-                                            그냥 아무 말이나 막 쓰고 있는데 이거 고민하는 것도 이상한거 같아서 진짜로 생각나는대로 곧바로 타이핑하고 있습니다.<br><br>
-                                            이정도 길이면 충분하지 않을까 싶기도한데, 일단은 모르는 거니까 조금만 더 길게 이어 써 보았습니다.<br><br>
-                                            이정도면 되지 않을까요?<br><br>
-                                            그럼 글 마치겠습니다.<br><br>
-                                        </p>
-                                        <div class="effect"></div>
-                                    </div>
-                                    <div class="show-more">...</div>
-                                </div>
-                                <div class="content-attach">
-                                    <div class="user-comment">
-                                        <i class="fa-solid fa-message"></i>
-                                        <div class="speech-bubble">댓글 작성하기</div>
-                                        <div class="headcount">3</div>
-                                    </div>
-                                    <div class="user-react">
-                                        <i class="fa-solid fa-face-smile"></i>
-                                        <div class="speech-bubble">리액트</div>
-                                        <div class="headcount">2</div>
-                                    </div>
-                                    <div class="user-upvote">
-                                        <i class="fa-solid fa-circle-arrow-up"></i>
-                                        <div class="speech-bubble">업보트</div>
-                                        <div class="headcount">1</div>
-                                    </div>
-                                    <div class="clicks">
-                                        <i class="fa-solid fa-arrow-pointer"></i>
-                                        <div class="speech-bubble">조회수</div>
-                                        <div class="headcount">9</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div data-index="3" class="content-box">
-                        <div class="content-header">
-                            <div class="info-wrap">
-                                <div class="user-icon">
-                                    <i class="fa-solid fa-face-smile"></i>
-                                </div>
-                                <div class="content-introduce">
-                                    <div class="content-info">
-                                        <a class="user-name" href="#">이름1</a>
-                                        님의&nbsp;
-                                        <div class="category">
-                                            메이커로그
-                                        </div>
-                                    </div>
-                                    <div class="user-info">
-                                        <a class="user-info-task" href="#">Front-end Designer</a>
-                                        @
-                                        <a class="user-info-association" href="#">디스콰이엇*</a>
-                                        <div class="devider">•</div>
-                                        <div class="post-time">약 2시간 전</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="deny-wrap-wrap">
-                                <div class="deny-wrap">
-                                    <button class="deny">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="inner-content-wrap">
-                            <div class="inner-content">
-                                <div class="card-gap"></div>
-                                <div class="content-main">
-                                    <div class="content-head">
-                                        <h1 class="title">메이커로그 제목!</h1>
-                                    </div>
-                                    <div class="content-body">
-                                        <p>본문 내용</p>
-                                        <hr>
-                                        <p>
-                                            딱히 쓸 내용은 없는데 컨텐츠 채우려면 어쩔 수 없이 넣어야 해서 넣었습니다.<br><br>
-                                            적어도 최소 높이는 있어야 결과물 보기에 좋을거 같아서 그냥 아무 내용이나 넣고 있는데, 솔직히 딱히 쓸 건 없네요.<br><br>
-                                            그냥 아무 말이나 막 쓰고 있는데 이거 고민하는 것도 이상한거 같아서 진짜로 생각나는대로 곧바로 타이핑하고 있습니다.<br><br>
-                                            이정도 길이면 충분하지 않을까 싶기도한데, 일단은 모르는 거니까 조금만 더 길게 이어 써 보았습니다.<br><br>
-                                            이정도면 되지 않을까요?<br><br>
-                                            그럼 글 마치겠습니다.<br><br>
-                                        </p>
-                                        <div class="effect"></div>
-                                    </div>
-                                    <div class="show-more">...</div>
-                                </div>
-                                <div class="content-attach">
-                                    <div class="user-comment">
-                                        <i class="fa-solid fa-message"></i>
-                                        <div class="speech-bubble">댓글 작성하기</div>
-                                        <div class="headcount">3</div>
-                                    </div>
-                                    <div class="user-react">
-                                        <i class="fa-solid fa-face-smile"></i>
-                                        <div class="speech-bubble">리액트</div>
-                                        <div class="headcount">2</div>
-                                    </div>
-                                    <div class="user-upvote">
-                                        <i class="fa-solid fa-circle-arrow-up"></i>
-                                        <div class="speech-bubble">업보트</div>
-                                        <div class="headcount">1</div>
-                                    </div>
-                                    <div class="clicks">
-                                        <i class="fa-solid fa-arrow-pointer"></i>
-                                        <div class="speech-bubble">조회수</div>
-                                        <div class="headcount">9</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div data-index="4" class="content-box">
+                    <div data-index="2" data-topic='["financial", "ai"]' data-category="maker_log" class="content-box">
                         <div class="content-header">
                             <div class="info-wrap">
                                 <div class="user-icon">

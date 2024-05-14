@@ -633,6 +633,10 @@ body {
     border-radius: 8px;
 }
 
+.left-menu-list .topic.select {
+    background-color: rgb(245, 245, 247);
+}
+
 .left-menu-list .topic:hover {
     background-color: rgb(245, 245, 247);
 }
